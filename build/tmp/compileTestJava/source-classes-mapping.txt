@@ -1,0 +1,2 @@
+org/tom_v_squad/soiwenttoaconcert/SoiwenttoaconcertApplicationTests.java
+ org.tom_v_squad.soiwenttoaconcert.SoiwenttoaconcertApplicationTests
