@@ -16,21 +16,10 @@ import java.util.List;
 @RequestMapping("events")
 public class EventController {
 
-//    @GetMapping("create")
-//    public String displayCreateEventForm(Model model) {
-//        model.addAttribute("title", "Create Event");
-//        model.addAttribute(new Event());
-//    }
-//
-//    @PostMapping("create")
-//    public String processCreateEventForm(@RequestParam String eventName) {
-//        events.add(new Event(eventName));
-//        return "redirect:";
-//    }
     private static List<Event> events = new ArrayList<>();
 
     @GetMapping("create")
-    public String displayCreateEventForm(Model model) {
+    public String createEventForm(Model model) {
     model.addAttribute("title", "Create Event");
     model.addAttribute(new Event());
     return "events/create";
@@ -44,8 +33,8 @@ public class EventController {
             return "events/create";
         }
 
-        events.add(newEvent);
-        return "redirect:";
+        events.add(new Event());
+        return "events/create";
     }
 
 
