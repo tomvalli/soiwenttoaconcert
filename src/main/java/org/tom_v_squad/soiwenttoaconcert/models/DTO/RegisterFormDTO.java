@@ -1,4 +1,4 @@
-package org.tom_v_squad.soiwenttoaconcert.models;
+package org.tom_v_squad.soiwenttoaconcert.models.DTO;
 
 public class RegisterFormDTO extends LoginFormDTO {
 
