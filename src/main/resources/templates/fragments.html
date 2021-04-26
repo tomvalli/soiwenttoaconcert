@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-   <meta charset="UTF-8" />
-   <title>Title</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>So I Went To A Concert</title>
 </head>
 <body>
+
+<header th:fragment="header">
+    <h1 th:text="${title}">So I Went To A Concert</h1>
+</header>
 
 </body>
 </html>

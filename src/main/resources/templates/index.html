@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-   <meta charset="UTF-8" />
-   <title>Title</title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
+
+    <h2>Welcome</h2>
+
+    <a href="/logout"><input type="submit" value="Log out"/></a>
 
 </body>
 </html>
