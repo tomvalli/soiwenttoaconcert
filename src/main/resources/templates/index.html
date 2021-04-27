@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Soiwenttoaconcert</title>
-</head>
+
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
 <body>
 
-<h1>So I Went To A Concert!</h1>
+    <h2>Welcome</h2>
 
-<nav>
-    <ul>
-        <li><a href="/events">All Concert Events</a></li>
-    </ul>
-</nav>
+    <a href="/logout"><input type="submit" value="Log out"/></a>
 
 </body>
 </html>
