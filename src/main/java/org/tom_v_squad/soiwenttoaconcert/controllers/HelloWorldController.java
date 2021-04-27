@@ -1,3 +1,5 @@
+/*
+Legacy
 package org.tom_v_squad.soiwenttoaconcert;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,3 +17,5 @@ public class HelloWorldController {
         return List.of("Hello", "World");
     }
 }
+}
+*/
