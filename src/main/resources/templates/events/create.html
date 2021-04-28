@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <title>Soiwenttoaconcert</title>
@@ -9,8 +9,17 @@
 <h1>Add Concert Event</h1>
 
 <form method="post">
-    <input type="text" name="eventName">
-    <input type="submit" value="Create">
+    <input label= "artist" type="text" name="eventName">Artist</label>
+    <br>
+    <input label="location" type="text" name="location">Location</label>
+    <br>
+    <input label="date" type="text" name="date">Date</label>
+    <br>
+    <input label="venue" type="text" name="venue">Venue</label>
+    <br>
+    <input label="festival" type="checkbox" name="festival" value="Festival">Festival</label>
+    <br>
+    <input type="submit" value="Add Concert">
 </form>
 
 </body>
