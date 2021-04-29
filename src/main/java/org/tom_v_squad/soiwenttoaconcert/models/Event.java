@@ -77,6 +77,6 @@ public class Event {
         return name;
     }
 
-    //Generate Hash / Equals???
+    //Generate Hash / Equals??? 17.5.2.2
 
 }

@@ -1,5 +1,6 @@
 package org.tom_v_squad.soiwenttoaconcert.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.tom_v_squad.soiwenttoaconcert.data.EventRepository;
 import org.tom_v_squad.soiwenttoaconcert.models.Event;
 
 import java.util.ArrayList;
@@ -16,7 +18,8 @@ import java.util.List;
 @RequestMapping("events")
 public class EventController {
 
-    private static List<Event> events = new ArrayList<>();
+    @Autowired
+    private EventRepository eventRepository;
 
     @GetMapping("create")
     public String createEventForm(Model model) {
@@ -33,8 +36,14 @@ public class EventController {
             return "events/create";
         }
 
-        events.add(new Event());
+        eventRepository.save(newEvent);
         return "events/create";
+    }
+
+    @GetMapping("index")
+    public String displayEventList(Model model) {
+        model.addAttribute("event","List Event");
+        return "events/index";
     }
 
 
