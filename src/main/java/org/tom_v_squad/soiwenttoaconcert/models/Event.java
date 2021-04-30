@@ -3,6 +3,7 @@ package org.tom_v_squad.soiwenttoaconcert.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Event {
@@ -79,4 +80,17 @@ public class Event {
 
     //Generate Hash / Equals??? 17.5.2.2
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Event event = (Event) o;
+        return eventId == event.eventId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eventId);
+    }
 }
