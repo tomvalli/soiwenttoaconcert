@@ -43,6 +43,7 @@ public class EventController {
     @GetMapping("index")
     public String displayEventList(Model model) {
         model.addAttribute("event","List Event");
+        model.addAttribute("events", eventRepository.findAll());
         return "events/index";
     }
 
