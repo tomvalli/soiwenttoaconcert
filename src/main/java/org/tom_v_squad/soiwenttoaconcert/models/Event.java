@@ -12,15 +12,15 @@ public class Event {
     @GeneratedValue
     private int eventId;
 
-    private String name;
+    private String artistName;
     private String location;
     private String date;
     private boolean festival;
     private int venueId;
 
-    public Event(int eventId, String name, String location, String date, boolean festival, int venueId) {
+    public Event(int eventId, String artistName, String location, String date, boolean festival, int venueId) {
         this.eventId = eventId;
-        this.name = name;
+        this.artistName = artistName;
         this.location = location;
         this.date = date;
         this.festival = festival;
@@ -29,12 +29,12 @@ public class Event {
 
     public Event() { }
 
-    public String getName() {
-        return name;
+    public String getArtistName() {
+        return artistName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
     }
 
     public String getLocation() {
@@ -75,7 +75,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return name;
+        return artistName;
     }
 
     //Generate Hash / Equals??? 17.5.2.2
