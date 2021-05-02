@@ -1,9 +1,23 @@
 package org.tom_v_squad.soiwenttoaconcert.models;
 
-public class Venue {
-    private String name;
-    private String location;
+import com.sun.istack.NotNull;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Venue {
+
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String location;
 
     public Venue(String aName, String aLocation) {
         this.name = aName;
