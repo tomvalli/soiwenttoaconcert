@@ -23,15 +23,15 @@ public class EventController {
 
     @GetMapping("create")
     public String createEventForm(Model model) {
-    model.addAttribute("title", "Create Event");
-    model.addAttribute(new Event());
-    return "events/create";
-}
+        model.addAttribute("title", "Create Event");
+        model.addAttribute(new Event());
+        return "events/create";
+    }
 
     @PostMapping("create")
     public String processCreateEventForm(@ModelAttribute Event newEvent,
                                          Errors errors, Model model) {
-        if(errors.hasErrors()) {
+        if (errors.hasErrors()) {
             model.addAttribute("title", "Create Event");
             return "events/create";
         }
@@ -42,10 +42,9 @@ public class EventController {
 
     @GetMapping("index")
     public String displayEventList(Model model) {
-        model.addAttribute("event","List Event");
+        model.addAttribute("event", "List Event");
         model.addAttribute("events", eventRepository.findAll());
         return "events/index";
     }
-
 
 }

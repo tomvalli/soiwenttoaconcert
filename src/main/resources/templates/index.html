@@ -1,17 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>user center</title>
 </head>
 <body>
 
-    <h2>Welcome</h2>
+<!--TODO: add username variable to display user's name-->
+    <h2>Welcome Saresh</h2>
+
+
+<!--TODO: add if/then to show/hide table. i.e. hide if empty ek-->
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+<!--        <th>ID</th>-->
+        <th>Name</th>
+<!--        <th>Location</th>-->
+        <th>Date</th>
+<!--        <th>Venue</th>-->
+<!--        <th>Festival</th>-->
+    </tr>
+    </thead>
+    <tr th:each="event : ${events}">
+<!--        <td th:text="${event.eventId}"></td>-->
+        <td th:text="${event.artistName}"></td>
+<!--        <td th:text="${event.location}"></td>-->
+        <td th:text="${event.date}"></td>
+<!--        <td th:text="${event.venueId}"></td>-->
+<!--        <td th:text="${event.festival}"></td>-->
+    </tr>
+</table>
 
     <a href="/logout"><input type="submit" value="Log out"/></a>
+
+    <a href="events/create"><input type="submit" value="Create Event"/></a>
+    <a href="events/index"><input type="submit" value="View Events"/></a>
+
 
 </body>
 </html>
