@@ -14,6 +14,7 @@
         <th>Date</th>
         <th>Venue</th>
         <th>Festival</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tr th:each="event : ${events}">
@@ -23,7 +24,13 @@
         <td th:text="${event.date}"></td>
         <td th:text="${event.venueId}"></td>
         <td th:text="${event.festival}"></td>
+        <td>
+            <a href="#" th:href="@{/events/edit/{id}(id=${event.eventId})}">Edit</a>
+            <a href="#" th:href="@{/events/delete/{id}(id=${event.eventId})}">Delete</a>
+        </td>
     </tr>
 </table>
+<br>
+<a th:href="@{/events/create}">Add New Concert Event</a>
 </body>
 </html>
