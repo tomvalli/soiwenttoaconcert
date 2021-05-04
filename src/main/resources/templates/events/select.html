@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-   <meta charset="UTF-8" />
-   <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-
+<form method="post">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Festival</th>
+            <th>Attended</th>
+        </tr>
+        </thead>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.eventId}"></td>
+            <td th:text="${event.artistName}"></td>
+            <td th:text="${event.location}"></td>
+            <td th:text="${event.date}"></td>
+            <td th:text="${event.venueId}"></td>
+            <td th:text="${event.festival}"></td>
+            <td>
+                <input type="hidden" th:field="${userEvent.user}">
+                <input th:field="${userEvent.event}" th:value="${event.eventId}" type="checkbox">
+                <input type="submit" value="Add Event">
+                <!--                <input name="eventId" th:value="${event.eventId}" type="submit" value="Add Events"></td>-->
+                <!--            <input name="eventIds" th:value="${event.eventId}" type="checkbox"></td>-->
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
