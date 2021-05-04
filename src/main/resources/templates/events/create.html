@@ -9,17 +9,31 @@
 <h1>Add Concert Event</h1>
 
 <form method="post">
-    <input label= "artist" type="text" name="artistName">Artist</label>
-    <br>
-    <input label="location" type="text" name="location">Location</label>
-    <br>
-    <input label="date" type="text" name="date">Date</label>
-    <br>
-    <input label="venue" type="text" name="venue">Venue</label>
-    <br>
-    <input label="festival" type="checkbox" name="festival" value="Festival">Is this part of a festival?</label>
-    <br>
-    <input type="submit" value="Add Concert">
+    <table>
+        <tr>
+            <td>Artist</td>
+            <td><input type="text" name="artistName"/></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td><input type="text" name="location"/></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="text" name="date"/></td>
+        </tr>
+        <tr>
+            <td>Venue</td>
+            <td><input type="text" name="venue"/></td>
+        </tr>
+        <tr>
+            <td>Is this a festival?</td>
+            <td><input type="checkbox" name="festival"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Add Concert"/></td>
+        </tr>
+    </table>
 </form>
 
 </body>
