@@ -4,15 +4,23 @@ import com.sun.istack.NotNull;
 import org.tom_v_squad.soiwenttoaconcert.models.Event;
 import org.tom_v_squad.soiwenttoaconcert.models.User;
 
-public class EventUserDTO {
-
-    @NotNull
-    private Event event;
+public class UserEventDTO {
 
     @NotNull
     private User user;
 
-    public EventUserDTO() {}
+    @NotNull
+    private Event event;
+
+    public UserEventDTO() {}
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Event getEvent() {
         return event;
@@ -22,11 +30,5 @@ public class EventUserDTO {
         this.event = event;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }
+
