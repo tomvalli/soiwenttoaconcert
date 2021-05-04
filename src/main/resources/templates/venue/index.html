@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
 </head>
+
 <body>
 
 <div th:replace="fragments :: page-header"></div>
@@ -10,11 +12,34 @@
 
 <div>
     <h2>Venues</h2>
+    <form method = 'post'>
+        <input type = 'text' name = 'venue'/>
+        <input type = 'submit' value = 'Search Venues'/>
+    </form>
     <ul>
-        <li th:each="venue : ${venues}">
-            <a th:href="@{'/venues/view/'}" th:text="${venue.name}"></a>
-        </li>
+        <h3> Venue Name</h3>
+        <th:block th:each="venue : ${venues}">
+<!--            <a th:href="@{'/venues/view/'}" th:text="${venue.name}"></a>-->
+            <li th:text="${venue}"></li>
+        </th:block>
     </ul>
+
+    <ul>
+        <h3> Venue Address</h3>
+        <th:block th:each="address : ${addresses}">
+            <!--            <a th:href="@{'/venues/view/'}" th:text="${venue.name}"></a>-->
+            <li th:text="${address}"></li>
+        </th:block>
+    </ul>
+
+    <ul>
+        <h3> Upcoming Events</h3>
+        <th:block th:each="upcomingEvent : ${upcomingEvents}">
+            <!--            <a th:href="@{'/venues/view/'}" th:text="${venue.name}"></a>-->
+            <li th:text="${upcomingEvent}"></li>
+        </th:block>
+    </ul>
+
     <a th:href="@{'/venues/add'}">Add Venues</a> <br>
     <a th:href="@{'/venues/edit'}">Edit Venues</a>
 
