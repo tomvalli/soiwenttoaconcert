@@ -4,9 +4,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.*;
 
 @Entity
 public class User {
@@ -20,6 +19,9 @@ public class User {
 
     @NotNull
     private String pwHash;
+
+    @ManyToMany
+    private final List<Event> events = new ArrayList<Event>();
 
     public User() {}
 
@@ -35,6 +37,15 @@ public class User {
     public String getUsername() {
         return username;
     }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void addEvent(Event event) {
+        this.events.add(event);
+    }
+
 
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
