@@ -1,35 +1,58 @@
 <!doctype html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- CSS only -->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">-->
+    <link href="css/splitscreen.css" rel="stylesheet">
+
+    <!-- JavaScript Bundle with Popper -->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>-->
     <title>user center</title>
 </head>
 <body>
 
-<!--added username variable to display user's name-->
-    <h3>Welcome </h3>
-    <h3 th:text="${greeting}">Greetings</h3>
+<!--<div class="container body-content">-->
+<div class="container">
+    <!-- First Half -->
+    <div class="split left">
+        <div class="centered">
+            <h3>Welcome </h3>
+            <h3 th:text="${greeting}">Greetings</h3>
+        </div>
+    </div>
 
-<!--TODO: add if/then to show/hide table. i.e. hide if empty ek-->
+
+    <!-- Second Half -->
+
+    <div class="split right">
+        <div class="centered">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tr th:each="event : ${events}">
+                    <td th:text="${event.artistName}"></td>
+                    <td th:text="${event.date}"></td>
+                </tr>
+            </table>
+            <a href="/logout"><input type="submit" value="Log out"/></a>
+            <a href="events/create"><input type="submit" value="Create Event"/></a>
+            <a href="events/index"><input type="submit" value="View Events"/></a>
+        </div>
+    </div>
 
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Date</th>
-    </tr>
-    </thead>
-    <tr th:each="event : ${events}">
-        <td th:text="${event.artistName}"></td>
-        <td th:text="${event.date}"></td>
-    </tr>
-</table>
-    <a href="/logout"><input type="submit" value="Log out"/></a>
-    <a href="events/create"><input type="submit" value="Create Event"/></a>
-    <a href="events/index"><input type="submit" value="View Events"/></a>
+</div>
+
 </body>
+
 </html>
