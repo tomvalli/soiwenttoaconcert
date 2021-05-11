@@ -47,5 +47,11 @@ public class EventController {
         return "events/index";
     }
 
+    @GetMapping("edit/{id}")
+    public String editEventForm(Model model) {
+        model.addAttribute("title", "Edit Event");
+        model.addAttribute(new Event());
+        return "events/index";
+    }
 
 }
