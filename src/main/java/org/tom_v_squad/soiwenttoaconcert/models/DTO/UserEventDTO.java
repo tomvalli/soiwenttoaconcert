@@ -4,13 +4,16 @@ import com.sun.istack.NotNull;
 import org.tom_v_squad.soiwenttoaconcert.models.Event;
 import org.tom_v_squad.soiwenttoaconcert.models.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserEventDTO {
 
     @NotNull
     private User user;
 
     @NotNull
-    private Event event;
+    private List<Event> events = new ArrayList<Event>();
 
     public UserEventDTO() {}
 
@@ -22,13 +25,12 @@ public class UserEventDTO {
         this.user = user;
     }
 
-    public Event getEvent() {
-        return event;
+    public List<Event> getEvents() {
+        return events;
     }
 
-    public void setEvent(Event event) {
-        this.event = event;
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
-
 }
 
