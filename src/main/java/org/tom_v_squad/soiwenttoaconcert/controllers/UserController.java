@@ -44,9 +44,19 @@ public class UserController {
 
     }
 
+//    TODO: complete setChangeUserName method
+//    public User setChangeUserName(HttpServletRequest request) {
+//        User user = getUserFromSession(request.getSession());
+//        String username = user.getUsername();
+//        return "profile/index";
+//    }
+
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @GetMapping("/")
-    public String displayWelcomeName(HttpServletRequest request, Model model) {
+    public String displayDashboard(HttpServletRequest request, Model model) {
         //give user's name from login/session to user profile template
         User user = getUserFromSession(request.getSession());
         String username = user.getUsername();
@@ -55,6 +65,9 @@ public class UserController {
         model.addAttribute("event", "List Event");
         model.addAttribute("events", eventRepository.findAll());
         return "index";
-
     }
+
+
+
+
 }
