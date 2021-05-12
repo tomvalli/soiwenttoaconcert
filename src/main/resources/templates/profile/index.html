@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+</head>
+<body>
+
+<h3>Your Profile</h3>
+<h3 th:text="${greeting}">Greetings</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Bio</th>
+<!--  TODO: <th># of events attended</th>-->
+
+  </tr>
+  </thead>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.userId}"></td>
+    <td th:text="${user.userName}"></td>
+<!--    <td th:text="${user.userlocation}"></td>-->
+<!--    <td th:text="${user.userbio}"></td>-->
+  </tr>
+</table>
+<!--TODO return to add photo-->
+
+
+<a href="profile/edit"><input type="submit" value="Edit"/></a>
+<!--<a href=".."><input type="submit" value="profile"/></a>-->
+
+</body>
+</html>
