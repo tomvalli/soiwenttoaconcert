@@ -14,6 +14,7 @@
         <th>Date</th>
         <th>Venue</th>
         <th>Festival</th>
+        <th>Attended</th>
     </tr>
     </thead>
     <tr th:each="event : ${events}">
@@ -23,13 +24,17 @@
         <td th:text="${event.date}"></td>
         <td th:text="${event.venueId}"></td>
         <td th:text="${event.festival}"></td>
+        <td th:if = "${attendedEvents.contains(event)}">Attended</td>
+        <td th:unless = "${attendedEvents.contains(event)}">Not Attended</td>
     </tr>
 </table>
+
 <!--TODO return to add more events-->
 <!--TODO return to profile-->
 
 <a href="create"><input type="submit" value="Create Event"/></a>
 <a href=".."><input type="submit" value="profile"/></a>
+<a href="/events/select">Add an existing event to my profile! 🎧 </a>
 
 </body>
 </html>
