@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post">
+<p th:if = "${empty}">You've attended all concerts in our list!</p>
+<form th:unless = "${empty}" method="post" th:object="${userEvent}">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -27,13 +28,11 @@
             <td th:text="${event.festival}"></td>
             <td>
                 <input type="hidden" th:field="${userEvent.user}">
-                <input th:field="${userEvent.event}" th:value="${event.eventId}" type="checkbox">
-                <input type="submit" value="Add Event">
-                <!--                <input name="eventId" th:value="${event.eventId}" type="submit" value="Add Events"></td>-->
-                <!--            <input name="eventIds" th:value="${event.eventId}" type="checkbox"></td>-->
+                <input th:field="${userEvent.events}" th:value="${event.eventId}" type="checkbox">
             </td>
         </tr>
     </table>
+    <input type="submit" value="Add Events">
 </form>
 </body>
 </html>
