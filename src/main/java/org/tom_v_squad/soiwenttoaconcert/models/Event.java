@@ -1,8 +1,8 @@
 package org.tom_v_squad.soiwenttoaconcert.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +17,9 @@ public class Event {
     private String date;
     private boolean festival;
     private int venueId;
+
+    @ManyToMany(mappedBy = "events")
+    private final List<User> users = new ArrayList<>();
 
     public Event(int eventId, String artistName, String location, String date, boolean festival, int venueId) {
         this.eventId = eventId;
@@ -71,6 +74,10 @@ public class Event {
 
     public int getEventId() {
         return eventId;
+    }
+
+    public List<User> getUsers() {
+        return users;
     }
 
     @Override
