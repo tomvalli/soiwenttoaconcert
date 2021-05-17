@@ -13,7 +13,7 @@
 <div>
     <h2>Venues</h2>
     <form method = 'post'>
-        <input type = 'text' name = 'venue'/>
+        <input type = 'text' name = 'venues'/>
         <input type = 'submit' value = 'Search Venues'/>
     </form>
     <ul>
@@ -26,21 +26,21 @@
 
     <ul>
         <h3> Venue Address</h3>
-        <th:block th:each="address : ${addresses}">
+        <th:block th:each="location : ${locations}">
             <!--            <a th:href="@{'/venues/view/'}" th:text="${venue.name}"></a>-->
-            <li th:text="${address}"></li>
+            <li th:text="${location}"></li>
         </th:block>
     </ul>
 
     <ul>
         <h3> Upcoming Events</h3>
-        <th:block th:each="upcomingEvent : ${upcomingEvents}">
-            <!--            <a th:href="@{'/venues/view/'}" th:text="${venue.name}"></a>-->
-            <li th:text="${upcomingEvent}"></li>
-        </th:block>
+<!--        <th:block th:each="upcomingEvent : ${upcomingEvents}">-->
+<!--            &lt;!&ndash;            <a th:href="@{'/venues/view/'}" th:text="${venue.name}"></a>&ndash;&gt;-->
+<!--            <li th:text="${upcomingEvent}"></li>-->
+<!--        </th:block>-->
     </ul>
 
-    <a th:href="@{'/venues/add'}">Add Venues</a> <br>
+    <a th:href="@{'/venues/create'}">Add Venues</a> <br>
     <a th:href="@{'/venues/edit'}">Edit Venues</a>
 
 </div>

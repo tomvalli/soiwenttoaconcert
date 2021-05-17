@@ -1,42 +1,65 @@
 package org.tom_v_squad.soiwenttoaconcert.models;
 
-import com.sun.istack.NotNull;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Venue {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int venueId;
 
-    @NotNull
-    private String name;
+    private String venueName;
+    private String venueLocation;
 
-    @NotNull
-    private String location;
 
-    public Venue(String aName, String aLocation) {
-        this.name = aName;
-        this.location = aLocation;
+
+    public Venue(int venueId, String venueName, String venueLocation) {
+        this.venueId = venueId;
+        this.venueName = venueName;
+        this.venueLocation = venueLocation;
     }
 
-    public String getName() {
-        return name;
+    public Venue(){}
+
+    public String getVenueName() {
+        return venueName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setVenueName(String venueName) {
+        this.venueName = venueName;
     }
 
-    public String getLocation() {
-        return location;
+    public String getVenueLocation() {
+        return venueLocation;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setVenueLocation(String venueLocation) {
+        this.venueLocation = venueLocation;
+    }
+
+    public int getVenueId() {
+        return venueId;
+    }
+
+    @Override
+    public String toString() {
+        return venueName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Venue venue = (Venue) o;
+        return venueId == venue.venueId && venueName.equals(venue.venueName) && venueLocation.equals(venue.venueLocation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(venueId, venueName, venueLocation);
     }
 }

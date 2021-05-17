@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 org/tom_v_squad/soiwenttoaconcert/controllers/HomeController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.HomeController
 org/tom_v_squad/soiwenttoaconcert/data/VenueRepository.java
@@ -8,6 +9,14 @@ org/tom_v_squad/soiwenttoaconcert/SoiwenttoaconcertApplication.java
  org.tom_v_squad.soiwenttoaconcert.SoiwenttoaconcertApplication
 org/tom_v_squad/soiwenttoaconcert/data/EventRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.EventRepository
+=======
+org/tom_v_squad/soiwenttoaconcert/controllers/AuthenticationController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.AuthenticationController
+org/tom_v_squad/soiwenttoaconcert/models/User.java
+ org.tom_v_squad.soiwenttoaconcert.models.User
+org/tom_v_squad/soiwenttoaconcert/models/DTO/LoginFormDTO.java
+ org.tom_v_squad.soiwenttoaconcert.models.DTO.LoginFormDTO
+>>>>>>> f8425db (venue and artist controller)
 org/tom_v_squad/soiwenttoaconcert/WebApplicationConfig.java
  org.tom_v_squad.soiwenttoaconcert.WebApplicationConfig
 org/tom_v_squad/soiwenttoaconcert/models/DTO/LoginFormDTO.java
@@ -26,5 +35,28 @@ org/tom_v_squad/soiwenttoaconcert/controllers/EventController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.EventController
 org/tom_v_squad/soiwenttoaconcert/AuthenticationFilter.java
  org.tom_v_squad.soiwenttoaconcert.AuthenticationFilter
+<<<<<<< HEAD
 org/tom_v_squad/soiwenttoaconcert/controllers/UserController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.UserController
+=======
+org/tom_v_squad/soiwenttoaconcert/data/VenueRepository.java
+ org.tom_v_squad.soiwenttoaconcert.data.VenueRepository
+org/tom_v_squad/soiwenttoaconcert/controllers/EventController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.EventController
+org/tom_v_squad/soiwenttoaconcert/controllers/HomeController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.HomeController
+org/tom_v_squad/soiwenttoaconcert/data/EventRepository.java
+ org.tom_v_squad.soiwenttoaconcert.data.EventRepository
+org/tom_v_squad/soiwenttoaconcert/models/Event.java
+ org.tom_v_squad.soiwenttoaconcert.models.Event
+org/tom_v_squad/soiwenttoaconcert/models/Venue.java
+ org.tom_v_squad.soiwenttoaconcert.models.Venue
+org/tom_v_squad/soiwenttoaconcert/data/ArtistRepository.java
+ org.tom_v_squad.soiwenttoaconcert.data.ArtistRepository
+org/tom_v_squad/soiwenttoaconcert/models/Artist.java
+ org.tom_v_squad.soiwenttoaconcert.models.Artist
+org/tom_v_squad/soiwenttoaconcert/controllers/VenueController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.VenueController
+org/tom_v_squad/soiwenttoaconcert/controllers/ArtistController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.ArtistController
+>>>>>>> f8425db (venue and artist controller)
