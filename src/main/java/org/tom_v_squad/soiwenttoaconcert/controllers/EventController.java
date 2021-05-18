@@ -46,17 +46,30 @@ public class EventController {
     }
 
     @GetMapping("edit/{eventId}")
-    public String editEventForm(@RequestParam Integer eventId, Model model) {
+    public String editEventForm(@PathVariable Integer eventId, Model model) {
         Optional<Event> result = eventRepository.findById(eventId);
 
         if (result.isEmpty()) {
             model.addAttribute("title", "Invalid Event ID: " + eventId);
         }else{
             Event event = result.get();
-            model.addAttribute("event","List Event");
+            System.out.println(event.getEventId());
+            model.addAttribute("event", event);
         }
 
-        return "events/edit/{eventId}";
+        return "events/edit";
+
+    }
+
+    @PostMapping("edit/{eventId}")
+    public String editEventForm(@PathVariable Integer eventId, @ModelAttribute Event newEvent, Errors errors, Model model) {
+        if(errors.hasErrors()) {
+            model.addAttribute("title", "Create Event");
+            return "events/create";
+        }
+       // model.addAttribute("location", location);
+        eventRepository.save(newEvent);
+        return "events/index";
     }
 
 }

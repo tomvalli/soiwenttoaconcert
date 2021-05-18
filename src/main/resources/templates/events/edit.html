@@ -7,16 +7,16 @@
 <body>
 <h1>Edit Concert Event</h1>
 
-<form method="post">
-    <input label= "artist" type="text" name="artistName">Artist</label>
+<form th:action="@{/edit/{id}(id=${event.eventId})}" th:object="${event}" method="post">
+    <input th:field = "${event.artistName}" label= "artist" type="text" name="artistName">Artist</label>
     <br>
-    <input label="location" type="text" name="location">Location</label>
+    <input th:field = "${event.location}" label="location" type="text" name="location">Location</label>
     <br>
-    <input label="date" type="text" name="date">Date</label>
+    <input th:field = "${event.date}" label="date" type="text" name="date">Date</label>
     <br>
-    <input label="venue" type="text" name="venue">Venue</label>
+    <input th:field = "${event.venueId}" label="venue" type="text" name="venue">Venue</label>
     <br>
-    <input label="festival" type="checkbox" name="festival" value="Festival">Is this part of a festival?</label>
+    <input th:field = "${event.festival}" label="festival" type="checkbox" name="festival" value="Festival">Is this part of a festival?</label>
     <br>
     <input type="submit" value="Add Concert">
 </form>
