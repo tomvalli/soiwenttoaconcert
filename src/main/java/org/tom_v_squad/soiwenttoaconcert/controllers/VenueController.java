@@ -23,14 +23,14 @@ public class VenueController {
       model.addAttribute("title", "Venues");
       model.addAttribute("venues", venueRepository.findAll());
 
-      return "Venue/index";
+      return "venue/index";
    }
 
 
    @GetMapping("create")
    public String displayAddVenue(Model model) {
       model.addAttribute(new Venue());
-      return "Venue/create";
+      return "venue/create";
    }
 
    @PostMapping("create")
@@ -38,7 +38,7 @@ public class VenueController {
                                      Errors errors, Model model) {
 
       if (errors.hasErrors()) {
-         return "Venue/create";
+         return "venue/create";
       }
       venueRepository.save(newVenue);
       return "redirect:";
@@ -51,7 +51,7 @@ public class VenueController {
       if (optVenue.isPresent()) {
          Venue venue = (Venue) optVenue.get();
          model.addAttribute("venue", venue);
-         return "Venue/index";
+         return "venue/index";
       } else {
          return "redirect:../";
       }
