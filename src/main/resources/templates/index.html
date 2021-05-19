@@ -23,7 +23,7 @@
     <div class="split left">
         <div class="centered">
             <h3>Welcome </h3>
-            <h3 th:text="${greeting}">Greetings</h3>
+<!--            <h3 th:text="${greeting}">Hello</h3>-->
         </div>
     </div>
 
@@ -35,13 +35,19 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Date</th>
+                    <th th:="${user}">username</th>
+                    <th th:="${location}">location</th>
+                    <th th:="${biography}">username</th>
+<!--                    <th>Name</th>-->
+<!--                    <th>Date</th>-->
                 </tr>
                 </thead>
-                <tr th:each="event : ${events}">
-                    <td th:text="${event.artistName}"></td>
-                    <td th:text="${event.date}"></td>
+<!--                <tr th:each="event : ${events}">-->
+<!--&lt;!&ndash;                    todo: display subset of events&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:if = "${attendedEvents.contains(event)}">Attended</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td th:unless = "${attendedEvents.contains(event)}">Not Attended</td>&ndash;&gt;-->
+<!--                    <td th:text="${event.artistName}"></td>-->
+<!--                    <td th:text="${event.date}"></td>-->
                 </tr>
             </table>
             <a href="/logout"><input type="submit" value="Log out"/></a>

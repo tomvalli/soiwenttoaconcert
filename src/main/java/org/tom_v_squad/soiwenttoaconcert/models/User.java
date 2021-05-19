@@ -30,6 +30,7 @@ public class User {
         this.pwHash = encoder.encode(password);
     }
 
+
     public int getId() {
         return id;
     }
@@ -37,6 +38,7 @@ public class User {
     public String getUsername() {
         return username;
     }
+
 
     public List<Event> getEvents() {
         return events;
