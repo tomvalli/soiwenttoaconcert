@@ -1,4 +1,4 @@
-package org.tom_v_squad.soiwenttoaconcert.controllers;
+//package org.tom_v_squad.soiwenttoaconcert.controllers;
 
 import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,18 +13,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
-@Controller
-public class DashboardController extends ProfileController {
-    private String event = "Nick Cave and the Bad Seeds";
-    public void review() {
-        System.out.println("Tuut, tuut!");
-    }
-    public static void main(String[] args) {
-        DashboardController myDashboard = new DashboardController();
-        myDashboard.review();
-        System.out.println(myDashboard.event + ", " + myDashboard.user);
-    }
-}
+//@Controller
+//public class DashboardController extends ProfileController {
+//    private String event = "Nick Cave and the Bad Seeds";
+//    public void review() {
+//        System.out.println("Tuut, tuut!");
+//    }
+//    public static void main(String[] args) {
+//        DashboardController myDashboard = new DashboardController();
+//        myDashboard.review();
+//        System.out.println(myDashboard.event + ", " + myDashboard.user);
+//    }
+//}
 
 //
 //    @Autowired

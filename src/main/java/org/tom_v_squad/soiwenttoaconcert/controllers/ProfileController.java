@@ -22,7 +22,7 @@ public class ProfileController {
     protected String location = "Boston";
     protected String biography = "A biography, or simply bio, is a detailed description of a person's life. It involves more than just the basic facts like education, work, relationships, and death; it portrays a person's experience of these life events";
 
-    @GetMapping
+    @GetMapping("eric") //localhost:8080/profile/eric
     public String displayMyProfile(Model model) {
         this.user = user;
         this.location = location;
@@ -30,9 +30,9 @@ public class ProfileController {
 //        String username = user.getUsername();
 //        model.addAttribute("greeting", username);
         model.addAttribute("user", "user");
-        model.addAttribute("location", "location");
-        model.addAttribute("biography", "biography");
-        return "index";
+        model.addAttribute("location", location);
+        model.addAttribute("biography", biography);
+        return "profile/index";
     }
 }
 

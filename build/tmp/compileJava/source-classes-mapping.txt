@@ -1,5 +1,5 @@
-org/tom_v_squad/soiwenttoaconcert/controllers/AuthenticationController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.AuthenticationController
+org/tom_v_squad/soiwenttoaconcert/AuthenticationFilter.java
+ org.tom_v_squad.soiwenttoaconcert.AuthenticationFilter
 org/tom_v_squad/soiwenttoaconcert/data/VenueRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.VenueRepository
 org/tom_v_squad/soiwenttoaconcert/data/UserRepository.java
@@ -10,23 +10,23 @@ org/tom_v_squad/soiwenttoaconcert/data/EventRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.EventRepository
 org/tom_v_squad/soiwenttoaconcert/controllers/EventController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.EventController
-org/tom_v_squad/soiwenttoaconcert/AuthenticationFilter.java
- org.tom_v_squad.soiwenttoaconcert.AuthenticationFilter
+org/tom_v_squad/soiwenttoaconcert/models/DTO/RegisterFormDTO.java
+ org.tom_v_squad.soiwenttoaconcert.models.DTO.RegisterFormDTO
 org/tom_v_squad/soiwenttoaconcert/models/DTO/LoginFormDTO.java
  org.tom_v_squad.soiwenttoaconcert.models.DTO.LoginFormDTO
 org/tom_v_squad/soiwenttoaconcert/models/Venue.java
  org.tom_v_squad.soiwenttoaconcert.models.Venue
 org/tom_v_squad/soiwenttoaconcert/models/User.java
  org.tom_v_squad.soiwenttoaconcert.models.User
-org/tom_v_squad/soiwenttoaconcert/WebApplicationConfig.java
- org.tom_v_squad.soiwenttoaconcert.WebApplicationConfig
+org/tom_v_squad/soiwenttoaconcert/controllers/DashboardController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.DashboardController
 org/tom_v_squad/soiwenttoaconcert/models/Event.java
  org.tom_v_squad.soiwenttoaconcert.models.Event
 org/tom_v_squad/soiwenttoaconcert/models/DTO/UserEventDTO.java
  org.tom_v_squad.soiwenttoaconcert.models.DTO.UserEventDTO
-org/tom_v_squad/soiwenttoaconcert/models/DTO/RegisterFormDTO.java
- org.tom_v_squad.soiwenttoaconcert.models.DTO.RegisterFormDTO
-org/tom_v_squad/soiwenttoaconcert/controllers/DashboardController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.DashboardController
+org/tom_v_squad/soiwenttoaconcert/controllers/AuthenticationController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.AuthenticationController
+org/tom_v_squad/soiwenttoaconcert/WebApplicationConfig.java
+ org.tom_v_squad.soiwenttoaconcert.WebApplicationConfig
 org/tom_v_squad/soiwenttoaconcert/controllers/ProfileController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.ProfileController
