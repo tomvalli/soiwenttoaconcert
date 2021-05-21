@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Delete Concert Event</h1>
+
+<form th:action="@{/edit/{id}(id=${event.eventId})}" th:object="${event}" method="post">
+    <input th:field = "${event.artistName}" label= "artist" type="text" name="artistName">Artist</label>
+    <br>
+    <input th:field = "${event.location}" label="location" type="text" name="location">Location</label>
+    <br>
+    <input th:field = "${event.date}" label="date" type="text" name="date">Date</label>
+    <br>
+    <input th:field = "${event.venueId}" label="venue" type="text" name="venue">Venue</label>
+    <br>
+    <input th:field = "${event.festival}" label="festival" type="checkbox" name="festival" value="Festival">Is this part of a festival?</label>
+    <br>
+    <input type="submit" value="Delete Concert">
+</form>
+</body>
+</html>

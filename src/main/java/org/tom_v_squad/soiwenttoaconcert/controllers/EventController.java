@@ -53,7 +53,7 @@ public class EventController {
             model.addAttribute("title", "Invalid Event ID: " + eventId);
         }else{
             Event event = result.get();
-            System.out.println(event.getEventId());
+            //System.out.println(event.getEventId());
             model.addAttribute("event", event);
         }
 
@@ -72,4 +72,28 @@ public class EventController {
         return "events/index";
     }
 
+    @GetMapping("delete/{eventId}")
+    public String deleteEventForm(@PathVariable Integer eventId, Model model) {
+        Optional<Event> result = eventRepository.findById(eventId);
+
+        if (result.isEmpty()) {
+            model.addAttribute("title", "Invalid Event ID: " + eventId);
+        }else{
+            Event event = result.get();
+            System.out.println(event.getEventId());
+            model.addAttribute("event", event);
+        }
+
+        return "events/delete";
+
+    }
+
+    @PostMapping("delete/{eventId}")
+    public String processDeleteEventForm(@PathVariable Integer eventId, Errors errors, Model model) {
+        Optional<Event> result = eventRepository.findById(eventId);
+        model.addAttribute("event", result);
+        eventRepository.delete(event);
+        return "events/index";
+        //IDK what is happening here, should "event" be "result"?
+    }
 }
