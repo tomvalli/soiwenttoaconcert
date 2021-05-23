@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> Cats and dogs!</h3>
+
+<h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+<form th:action="@{/search/results}" method = "post">
+    <h2>Search by:</h2>
+
+    <p>
+            <span th:each="column : ${columns}">
+                <input
+                        type="radio"
+                        name="searchType"
+                        th:id="${column.key}"
+                        th:value="${column.key}"
+                        th:checked="${column.key == 'all'}"/>
+                <label th:for="${column.key}" th:text="${column.value}"></label>
+            </span>
+
+    </p>
+
+    <p>
+        <label for="searchTerm">Keyword:</label>
+        <input type="text" name="searchTerm" id="searchTerm" />
+    </p>
+
+    <input type="submit" value="Search" />
+</form>
+
+<hr />
+
+
+<table>
+    <tr th:each="event : ${events}">
+        <td>
+            <p>
+                Event Id:
+                <a th:href="@{'/view/' + ${event.id}}" th:text="${event.id}"></a>
+            </p>
+            <p th:text="${'Name: ' + event.name}"></p>
+            <p>
+                Artist:
+                <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>
+            </p>
+            <p>
+                Skills:
+            <ul th:each="skill : ${job.skills}">
+                <li>
+                    <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
+                </li>
+            </ul>
+            </p>
+
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
