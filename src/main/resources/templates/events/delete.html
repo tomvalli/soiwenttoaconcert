@@ -7,18 +7,22 @@
 <body>
 <h1>Delete Concert Event</h1>
 
-<form th:action="@{/edit/{id}(id=${event.eventId})}" th:object="${event}" method="post">
-    <input th:field = "${event.artistName}" label= "artist" type="text" name="artistName">Artist</label>
-    <br>
-    <input th:field = "${event.location}" label="location" type="text" name="location">Location</label>
-    <br>
-    <input th:field = "${event.date}" label="date" type="text" name="date">Date</label>
-    <br>
-    <input th:field = "${event.venueId}" label="venue" type="text" name="venue">Venue</label>
-    <br>
-    <input th:field = "${event.festival}" label="festival" type="checkbox" name="festival" value="Festival">Is this part of a festival?</label>
-    <br>
-    <input type="submit" value="Delete Concert">
+<form method="post">
+
+    <th:block th:each="event : ${events}">
+        <div class="form-group">
+            <label>
+                <span th:text="${event.artistName}"></span>
+                <span th:text="${event.location}"></span>
+                <span th:text="${event.date}"></span>
+                <span th:text="${event.venueId}"></span>
+                <span th:text="${event.festival}"></span>
+                <input type="checkbox" name="eventId" th:value="${event.eventId}" class="form-control">
+            </label>
+        </div>
+    </th:block>
+
+    <input type="submit" value="Delete Selected Events" class="btn btn-danger">
 </form>
 </body>
 </html>

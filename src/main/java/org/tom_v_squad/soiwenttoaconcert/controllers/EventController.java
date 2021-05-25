@@ -72,28 +72,40 @@ public class EventController {
         return "events/index";
     }
 
-    @GetMapping("delete/{eventId}")
-    public String deleteEventForm(@PathVariable Integer eventId, Model model) {
-        Optional<Event> result = eventRepository.findById(eventId);
+//    @GetMapping("delete/{eventId}")
+//    public String deleteEventForm(@PathVariable Integer eventId, Model model) {
+//        Optional<Event> result = eventRepository.findById(eventId);
+//
+//        if (result.isEmpty()) {
+//            model.addAttribute("title", "Invalid Event ID: " + eventId);
+//        }else{
+//            Event event = result.get();
+//            System.out.println(event.getEventId());
+//            model.addAttribute("event", event);
+//        }
+//
+//        return "events/delete";
+//
+//    }
 
-        if (result.isEmpty()) {
-            model.addAttribute("title", "Invalid Event ID: " + eventId);
-        }else{
-            Event event = result.get();
-            System.out.println(event.getEventId());
-            model.addAttribute("event", event);
-        }
-
+    @GetMapping("delete")
+    public String renderDeleteEventForm(Model model) {
+        model.addAttribute("title", "Delete Event");
+        model.addAttribute("events", eventRepository.findAll());
         return "events/delete";
-
     }
 
-    @PostMapping("delete/{eventId}")
-    public String processDeleteEventForm(@PathVariable Integer eventId, Errors errors, Model model) {
+    @PostMapping("/delete/{eventId}")
+    public String processDeleteEventForm(@PathVariable Integer eventId, Model model) {
         Optional<Event> result = eventRepository.findById(eventId);
-        model.addAttribute("event", result);
-        eventRepository.delete(event);
-        return "events/index";
+        if (result.isEmpty()) {
+            model.addAttribute("title", "Invalid Event ID: " + eventId);
+        }else {
+            Event event = result.get();
+            //model.addAttribute("event", result);
+            eventRepository.delete(event);
+        }
+        return "redirect:/events/index";
         //IDK what is happening here, should "event" be "result"?
     }
 }
