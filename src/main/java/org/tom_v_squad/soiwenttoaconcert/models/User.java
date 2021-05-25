@@ -23,11 +23,21 @@ public class User {
     @ManyToMany
     private final List<Event> events = new ArrayList<Event>();
 
+    private String userLocation;
+
+    private String userBiography;
+
     public User() {}
 
     public User(String username, String password) {
         this.username = username;
         this.pwHash = encoder.encode(password);
+    }
+
+    public User(String username, String userBiography, String userLocation ) {
+        this.username = username;
+        this.userBiography = userBiography;
+        this.userLocation = userLocation;
     }
 
     public int getId() {
@@ -38,6 +48,8 @@ public class User {
         return username;
     }
 
+    public void setUsername(String username) { this.username = username; }
+
     public List<Event> getEvents() {
         return events;
     }
@@ -46,6 +58,13 @@ public class User {
         this.events.add(event);
     }
 
+    public String getUserLocation() { return userLocation; }
+
+    public void setUserLocation(String userLocation) { this.userLocation = userLocation; }
+
+    public String getUserBiography() { return userBiography; }
+
+    public void setUserBiography(String userBiography) { this.userBiography = userBiography; }
 
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
