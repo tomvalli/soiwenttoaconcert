@@ -72,40 +72,54 @@ public class EventController {
         return "events/index";
     }
 
-//    @GetMapping("delete/{eventId}")
-//    public String deleteEventForm(@PathVariable Integer eventId, Model model) {
-//        Optional<Event> result = eventRepository.findById(eventId);
-//
-//        if (result.isEmpty()) {
-//            model.addAttribute("title", "Invalid Event ID: " + eventId);
-//        }else{
-//            Event event = result.get();
-//            System.out.println(event.getEventId());
-//            model.addAttribute("event", event);
-//        }
-//
+    //@GetMapping("delete/{eventId}")
+    @GetMapping("delete")
+    public String deleteEventForm(@RequestParam Integer eventId, Model model) {
+        Optional<Event> result = eventRepository.findById(eventId);
+//attach a collection of events to loop thru + display
+        if (!result.isEmpty()) {
+            Event event = result.get();
+            model.addAttribute("title","Delete Event");
+            model.addAttribute("event", event);
+            return "events/delete";
+
+        }else{
+            model.addAttribute("title", "Invalid Event ID: " + eventId);
+        }
+
+        return "events/delete";
+
+    }
+
+//    @GetMapping("delete")
+//    public String renderDeleteEventForm(Model model) {
+//        model.addAttribute("title", "Delete Event");
+//        model.addAttribute("events", eventRepository.findAll());
 //        return "events/delete";
-//
 //    }
 
-    @GetMapping("delete")
-    public String renderDeleteEventForm(Model model) {
-        model.addAttribute("title", "Delete Event");
-        model.addAttribute("events", eventRepository.findAll());
-        return "events/delete";
+    @PostMapping("delete")
+    public String processDeleteEventsForm(@RequestParam(required = false) Integer eventId) {
+
+        if (eventId != null) {
+                Optional<Event> result = eventRepository.findById(eventId);
+                eventRepository.delete(result.get());
+        }
+
+        return "redirect:";
     }
 
-    @PostMapping("/delete/{eventId}")
-    public String processDeleteEventForm(@PathVariable Integer eventId, Model model) {
-        Optional<Event> result = eventRepository.findById(eventId);
-        if (result.isEmpty()) {
-            model.addAttribute("title", "Invalid Event ID: " + eventId);
-        }else {
-            Event event = result.get();
-            //model.addAttribute("event", result);
-            eventRepository.delete(event);
-        }
-        return "redirect:/events/index";
-        //IDK what is happening here, should "event" be "result"?
-    }
+//    @PostMapping("/delete/{eventId}")
+//    public String processDeleteEventForm(@PathVariable Integer eventId, Model model) {
+//        Optional<Event> result = eventRepository.findById(eventId);
+//        if (result.isEmpty()) {
+//            model.addAttribute("title", "Invalid Event ID: " + eventId);
+//        }else {
+//            Event event = result.get();
+//            //model.addAttribute("event", result);
+//            eventRepository.delete(event);
+//        }
+//        return "redirect:/events/index";
+//        //IDK what is happening here, should "event" be "result"?
+//    }
 }

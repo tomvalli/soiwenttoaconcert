@@ -27,7 +27,8 @@
         <td>
             <a href="#" th:href="@{/events/edit/{id}(id=${event.eventId})}">Edit</a>
 <!--            <a href="#" th:href="@{/events/delete/{id}(id=${event.eventId})}">Delete</a>-->
-            <a href="#" th:href="@{/events/delete}">Delete</a>
+            <a href="#" th:href="'/events/delete?eventId=' + ${event.eventId}">Delete</a>
+<!--            <a href="#" th:href="@{/events/delete}">Delete</a>-->
         </td>
     </tr>
 </table>
