@@ -47,11 +47,11 @@ public class UserController {
 
     @GetMapping("/")
     public String displayWelcomeName(HttpServletRequest request, Model model) {
-        //give user's name from login/session to user profile template
+        //give user's name from login/session to user artists template
         User user = getUserFromSession(request.getSession());
         String username = user.getUsername();
         model.addAttribute("greeting", username);
-        //give list of all events to user profile template
+        //give list of all events to user artists template
         model.addAttribute("event", "List Event");
         model.addAttribute("events", eventRepository.findAll());
         return "index";
