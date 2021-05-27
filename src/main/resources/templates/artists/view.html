@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<br/><br/><br/><br/>
+<h1 th:text="${'artist: ' + artist.name}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="concert-listing">
+    <p th:text="${'Name: ' + artist.name}"></p>
+    <p th:text="${'Description: ' + artist.description}"></p>
+</div>
+
+</body>
+</html>
