@@ -85,8 +85,6 @@ public class Event {
         return artistName;
     }
 
-    //Generate Hash / Equals??? 17.5.2.2
-
 
     @Override
     public boolean equals(Object o) {
@@ -96,6 +94,7 @@ public class Event {
         return eventId == event.eventId;
     }
 
+//    @Id
     @Override
     public int hashCode() {
         return Objects.hash(eventId);
