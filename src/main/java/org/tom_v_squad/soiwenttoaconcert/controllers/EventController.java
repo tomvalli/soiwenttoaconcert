@@ -72,20 +72,20 @@ public class EventController {
         return "events/index";
     }
 
-    //@GetMapping("delete/{eventId}")
-    @GetMapping("delete")
-    public String deleteEventForm(@RequestParam Integer eventId, Model model) {
-        Optional<Event> result = eventRepository.findById(eventId);
-//attach a collection of events to loop thru + display
-        if (!result.isEmpty()) {
-            Event event = result.get();
-            model.addAttribute("title","Delete Event");
-            model.addAttribute("event", event);
-            return "events/delete";
-
-        }else{
-            model.addAttribute("title", "Invalid Event ID: " + eventId);
-        }
+    @GetMapping("delete/{eventId}")
+//    @GetMapping("delete")
+    public String displayDeleteEventForm(@RequestParam Integer eventId, Model model) {
+//        Optional<Event> result = eventRepository.findById(eventId);
+////attach a collection of events to loop thru + display
+//        if (!result.isEmpty()) {
+//            Event event = result.get();
+//            model.addAttribute("title","Delete Event");
+//            model.addAttribute("event", event);
+//            return "events/delete";
+//
+//        }else{
+//            model.addAttribute("title", "Invalid Event ID: " + eventId);
+//        }
 
         return "events/delete";
 
