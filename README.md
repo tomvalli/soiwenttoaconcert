@@ -1,36 +1,42 @@
-# soiwenttoaconcert
-Liftoff 2021 Project - Concert Diary App
+# Liftoff Group Project 2021: So I went to a concert
 
---Overview--
+---
 
-The So I Went To A Concert app allows concert goers to document and review attendance at live musical events. Do you struggle to remember which Grateful Dead tour you lost your ego at? Would you like to show your friends how much of a Lady Gaga super-fan you are by documenting every single concert you attended for posterity? Would you like to share photos from the awesome Master P reunion show with other fans? Over time, memories get hazy but the internet is forever! Use the So I Went To A Concert app to record dates and images of cherished memories from live music events, and use the app to share those memories with your friends.
+### Overview
 
---FEATURES --
+The So I Went To A Concert app allows concert goers to document and review attendance at live musical events.
 
-    Add/Create Attendance: Users will be able to add their names to the attendance list of desired events.
-    Search Events: Users can search events using an established API of venues. The user can find venues using either name and/or location.
-    Upload Photos: Users will be able to upload photos of themselves within the review section of the show.
-    Facebook Login Integration: Users will be able to simultaneously update their Facebook posts through updating their show account.
-    Review Show : Users can post reviews of shows they've attended.
+Do you struggle to remember which Grateful Dead tour you lost your ego at? Would you like to show your friends how much of a Lady Gaga super-fan you are by documenting every single concert you attended for posterity? Would you like to share photos from the awesome Master P reunion show with other fans?
 
---Technologies--
+Over time, memories get hazy but the internet is forever! Use the So I Went To A Concert app to record dates and images of cherished memories from live music events, and use the app to share those memories with your friends.
 
-    Java
-    SpringBoot
-    Hibernate
-    HTML/CSS
-    Bootstrap
-    Thymeleaf templates
+### Features
 
-What I'll Have to Learn
+- **View/Create Events:** Users will be able to add events not included in the app, and see all recently added events.
+- **Attendance confirmation:** Users will be able to select the events they are planning or have attended.
+- **Search Events:** Users can search for an event by artist, location, date, among others.
+- **Upload Profile Picture:** Users will be able to upload a profile picture photos of themselves within the review section of the show.
+- **Register/Login/Logout:** Users will be able to create a username and password.
 
-    Collaborative technology workflow with git, slack, discord
-    Designing MVC org from scratch
-    Integrating Facebook login
-    Wireframing
-    Bootstrap templates
-    Possibly mapping API
+## Technologies
 
-Project Tracker
+- Java
+- SpringBoot
+- Hibernate
+- HTML/CSS
+- Bootstrap
+- Thymeleaf templates
 
-https://trello.com/b/22sfLhxw/liftoff2021
+## What We Learned
+
+- Collaborative technology workflow with git, slack, discord
+- Designing MVC org from scratch
+- Routing in Spring Boot
+- Wireframing
+- Bootstrap templates
+- Data Modeling + DB planning
+
+
+## Project Tracker
+
+[Trello](https://trello.com/b/22sfLhxw/liftoff2021)
