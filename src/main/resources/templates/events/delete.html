@@ -8,8 +8,7 @@
 <h1>Delete Concert Event</h1>
 
 <form method="post">
-//use th:action
-    <th:block th:each="event : ${events}">
+
         <div class="form-group">
             <label>
                 <span th:text="${event.artistName}"></span>
@@ -20,7 +19,7 @@
                 <input type="checkbox" name="eventId" th:value="${event.eventId}" class="form-control">
             </label>
         </div>
-    </th:block>
+
 
     <input type="submit" value="Delete Selected Events" class="btn btn-danger">
 </form>

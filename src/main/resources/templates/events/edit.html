@@ -7,7 +7,7 @@
 <body>
 <h1>Edit Concert Event</h1>
 
-<form th:action="@{/edit/{id}(id=${event.eventId})}" th:object="${event}" method="post">
+<form  th:object="${event}" method="post">
     <input th:field = "${event.artistName}" label= "artist" type="text" name="artistName">Artist</label>
     <br>
     <input th:field = "${event.location}" label="location" type="text" name="location">Location</label>

@@ -26,7 +26,7 @@
         <td th:text="${event.festival}"></td>
         <td>
             <a href="#" th:href="'/events/edit?eventId=' + ${event.eventId}">Edit</a>
-            <a href="#" th:href="'/events/delete?eventId=' + ${event.eventId}">Delete</a>
+            <a th:href="@{'/events/delete?eventId=' + ${event.eventId}}">Delete</a>
 
         </td>
     </tr>
