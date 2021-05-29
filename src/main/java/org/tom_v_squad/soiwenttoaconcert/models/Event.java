@@ -78,9 +78,6 @@ public class Event {
         return artistName;
     }
 
-    //Generate Hash / Equals??? 17.5.2.2
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

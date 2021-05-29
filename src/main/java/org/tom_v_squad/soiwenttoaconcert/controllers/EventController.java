@@ -18,7 +18,7 @@ public class EventController {
     private EventRepository eventRepository;
 
     @GetMapping("create")
-    public String createEventForm(Model model) {
+    public String displayCreateEventForm(Model model) {
     model.addAttribute("title", "Create Event");
     model.addAttribute(new Event());
     return "events/create";
@@ -31,7 +31,6 @@ public class EventController {
             model.addAttribute("title", "Create Event");
             return "events/create";
         }
-
         eventRepository.save(newEvent);
         return "events/create";
     }
@@ -45,7 +44,7 @@ public class EventController {
 
     @GetMapping("edit")
     public String displayEditEventForm(@RequestParam Integer eventId, Model model) {
-        Optional<Event> result = eventRepository.findById(eventId);
+        Optional <Event> result = eventRepository.findById(eventId);
 
         if (result.isEmpty()) {
             model.addAttribute("title", "Invalid Event ID: " + eventId);
@@ -57,7 +56,7 @@ public class EventController {
     }
 
     @PostMapping("edit")
-    public String editEventForm(@RequestParam Integer eventId, @ModelAttribute Event newEvent, Errors errors, Model model) {
+    public String processEditEventForm(@RequestParam Integer eventId, @ModelAttribute Event newEvent, Errors errors, Model model) {
         if(errors.hasErrors()) {
             model.addAttribute("title", "Create Event");
             return "events/create";
@@ -67,7 +66,7 @@ public class EventController {
         return "redirect:/events/index";
     }
 
-    @GetMapping("delete") // http://localhost:8080/events/delete?eventId={eventId}
+    @GetMapping("delete")
     public String displayDeleteEventForm(@RequestParam Integer eventId, Model model) {
         Optional<Event> result = eventRepository.findById(eventId);
 
@@ -76,15 +75,11 @@ public class EventController {
             model.addAttribute("title","Delete Event");
             model.addAttribute("event", event);
             return "events/delete";
-
         }else{
             model.addAttribute("title", "Invalid Event ID: " + eventId);
         }
-
         return "events/delete";
-
     }
-
 
     @PostMapping("delete")
     public String processDeleteEventsForm(@RequestParam(required = false) Integer eventId) {
@@ -95,7 +90,6 @@ public class EventController {
                 eventRepository.delete(result.get());
             }
         }
-
         return "redirect:/events/index";
     }
 
