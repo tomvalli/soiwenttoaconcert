@@ -5,85 +5,73 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import org.tom_v_squad.soiwenttoaconcert.data.ArtistRepository;
+import org.tom_v_squad.soiwenttoaconcert.data.ProfileRepository;
 import org.tom_v_squad.soiwenttoaconcert.data.UserRepository;
-import org.tom_v_squad.soiwenttoaconcert.models.Artist;
+import org.tom_v_squad.soiwenttoaconcert.models.Profile;
 import org.tom_v_squad.soiwenttoaconcert.models.User;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("artists")
-public class ArtistController {
+@RequestMapping("profile")
+public class ProfileController {
 
     // GETTING THE USER AUTHENTICATED NAME FOR THE PROFILE
 
     /////////////////////// USER
-//    @Autowired
-//    private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
-    private ArtistRepository artistRepository;
+    private ProfileRepository profileRepository;
 
     /////////////////////// USER
-//    private static final String userSessionKey = "user";
-//    private User updateProfile;
-//
-//    public User getUserFromSession(HttpSession session) {
-//        Integer userId = (Integer) session.getAttribute(userSessionKey);
-//        if (userId == null) {
-//            return null;
-//        }
-//        Optional<User> user = userRepository.findById(userId);
-//        if (user.isEmpty()) {
-//            return null;
-//        }
-//        return user.get();
-//    }
-//
-//    public void setUserRepository(UserRepository userRepository) {
-//        this.userRepository = userRepository;
-//    }
-    /////////////////////// ST
+    private static final String userSessionKey = "user";
 
-
-    public void setArtistRepository(ArtistRepository artistRepository) {
-        this.artistRepository = artistRepository;
+    public User getUserFromSession(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute(userSessionKey);
+        if (userId == null) {
+            return null;
+        }
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isEmpty()) {
+            return null;
+        }
+        return user.get();
     }
 
     @RequestMapping("")
     public String index(Model model) {
-        model.addAttribute("artists", artistRepository.findAll());
-        return "artists/index";
+        model.addAttribute("profiles", profileRepository.findAll());
+        return "profiles/index";
     }
 
 
     @GetMapping("add")
-    public String displayAddArtistForm(Model model) {
-        model.addAttribute(new Artist());
-        return "artists/add";
+    public String displayAddProfileForm(Model model) {
+        model.addAttribute(new Profile());
+        return "profiles/add";
     }
 
     @PostMapping("add")
-    public String processAddArtistForm(@ModelAttribute @Valid Artist newArtist, Errors errors, Model model) {
+    public String processAddProfileForm(@ModelAttribute @Valid Profile newProfile, Errors errors, Model model) {
         if (errors.hasErrors()) {
-            return "artists/add";
+            return "profiles/add";
         }
 
-        artistRepository.save(newArtist);
+        profileRepository.save(newProfile);
         return "redirect:";
     }
 
-    @GetMapping("view/{artistId}")
-    public String displayViewArtist(Model model, @PathVariable int artistId) {
-        Optional<Artist> result = artistRepository.findById(artistId);
+    @GetMapping("view/{profileId}")
+    public String displayViewProfile(Model model, @PathVariable int profileId) {
+        Optional<Profile> result = profileRepository.findById(profileId);
         if (result.isPresent()) {
-            Artist artist = result.get();
-            model.addAttribute("artist", artist);
-            return "artists/view";
+            Profile profile = result.get();
+            model.addAttribute("profile", profile);
+            return "profile/view";
         } else {
             return "redirect:../";
         }
