@@ -40,9 +40,11 @@ public class EventController {
                                          Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create Event");
+            model.addAttribute("failAlert", true);
             return "events/create";
         }
 
+        model.addAttribute("successAlert", true);
         eventRepository.save(newEvent);
         return "events/create";
     }
