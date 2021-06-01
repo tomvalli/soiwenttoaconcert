@@ -15,6 +15,7 @@
                     <th scope="col">Venue</th>
                     <th scope="col">Festival</th>
                     <th scope="col">Attended</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +28,10 @@
                     <td th:text="${event.festival}"></td>
                     <td th:if = "${attendedEvents.contains(event)}">Attended</td>
                     <td th:unless = "${attendedEvents.contains(event)}">Not Attended</td>
+                    <td>
+                        <a th:href="'/events/edit?eventId=' + ${event.eventId}">Edit</a>
+                        <a th:href="@{'/events/delete?eventId=' + ${event.eventId}}">Delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -35,6 +40,7 @@
     <div class="text-center">
         <h4>Are you planning or have you been to any of these shows?</h4>
         <a href="/events/select" class="btn btn-secondary btn-lg">🤘🏻🤘🏼🤘🏽🤘🏾🤘🏿🤘<br>Add them to my profile! 🎧</a>
+        <a class="btn btn-secondary btn-lg" th:href="@{/events/create}">Add New Concert Event</a>
     </div>
 </body>
 </html>
