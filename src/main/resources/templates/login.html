@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
-
-    <header th:replace="fragments :: header"></header>
-    <form method="post">
-        <div>
-            <label>Username
-                <input th:field="${loginFormDTO.username}" />
-            </label>
-            <p th:errors="${loginFormDTO.username}"></p>
+<body class="authentication">
+<section class="Form my-4 mx-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 m-0 p-0">
+                <img src="https://townsquare.media/site/527/files/2016/01/Concert-Vertical-LukaTDB-Thinkstock.jpg" class="img-fluid login" alt=""/>
+            </div>
+            <div class="col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">So <br> I Went <br> To a <br> Show </h1>
+                <h4>Sign into your account</h4>
+                <form method="post">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label>Username
+                                <input th:field="${loginFormDTO.username}" placeholder="Username" class="form-control my-3 p-4"/>
+                            </label>
+                            <p th:errors="${loginFormDTO.username}" class="error"></p>
+                        </div>
+                        <div class="col-lg-7">
+                            <label>Password
+                                <input th:field="${loginFormDTO.password}" placeholder="********" class="form-control my-3 p-4"  type="password"/>
+                            </label>
+                            <p th:errors="${loginFormDTO.password}" class="error"></p>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="submit" value="Log In ▶️" class="btn1 mt-3 mb-5"/>
+                        </div>
+                        <p>Don't have an account?<a href="/register" class="btn btn-dark m-3">Register for one.</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div>
-            <label>Password
-                <input th:field="${loginFormDTO.password}" type="password"/>
-            </label>
-            <p th:errors="${loginFormDTO.password}"></p>
-        </div>
-
-        <input type="submit" value="Log In" />
-    </form>
-
-    <p>Don't have an account?<a href="/register">Register for one.</a></p>
-
+    </div>
+</section>
 </body>
-</html>

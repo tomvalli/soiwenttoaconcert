@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="authentication">
 
-    <header th:replace="fragments :: header"></header>
-    <form method="post">
-        <div>
-            <label>Username
-                <input th:field="${registerFormDTO.username}" />
-            </label>
-            <p th:errors="${registerFormDTO.username}"></p>
+<!--    <header th:replace="fragments :: header"></header>-->
+    <section class="Form my-4 mx-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 px-5 pt-5">
+                    <h1 class="font-weight-bold py-3">Sign Up</h1>
+                    <h4>Join our community!</h4>
+                    <form method="post">
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <label>Username
+                                    <input th:field="${registerFormDTO.username}" placeholder="Username" class="form-control my-3 p-4" />
+                                </label>
+                                <p th:errors="${registerFormDTO.username}" class="error"></p>
+                            </div>
+                            <div class="col-lg-7">
+                                <label>Password
+                                    <input th:field="${registerFormDTO.password}" placeholder="********" class="form-control my-3 p-4" type="password"/>
+                                </label>
+                                <p th:errors="${registerFormDTO.password}" class="error"></p>
+                            </div>
+                            <div class="col-lg-7">
+                                <label>Verify Password
+                                    <input th:field="${registerFormDTO.verifyPassword}" placeholder="********" class="form-control my-3 p-4" type="password" />
+                                </label>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="submit" value="Register 📝" class="btn1 mt-3 mb-5"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-5 m-0 p-0">
+                    <img src="https://cdn5.eyeem.com/thumb/92f9a919db75a44ea5bfd142a8d6a5961c410fe5-1564072850147/w/1300" class="img-fluid register" alt=""/>
+                </div>
+            </div>
         </div>
-        <div>
-            <label>Password
-                <input th:field="${registerFormDTO.password}" type="password"/>
-            </label>
-            <p th:errors="${registerFormDTO.password}"></p>
-        </div>
-        <div>
-            <label>Verify Password
-                <input th:field="${registerFormDTO.verifyPassword}" type="password" />
-            </label>
-        </div>
-
-        <input type="submit" value="Register" />
-    </form>
-
+    </section>
 </body>
 </html>

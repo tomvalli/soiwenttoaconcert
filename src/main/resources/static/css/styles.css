@@ -1,0 +1,53 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.authentication {
+  background: rgb(43, 43, 43);
+}
+
+.row {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px grey;
+}
+
+.login {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.register {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius:30px;
+}
+
+.btn1{
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(242, 255, 0);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn1:hover{
+  background: rgb(234, 242, 70);
+  border: 1px solid;
+}
+
+.error {
+  color: rgb(252, 3, 3);
+  font-weight: bold;
+}
+
+main{
+  margin-top: 120px !important;
+}
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
