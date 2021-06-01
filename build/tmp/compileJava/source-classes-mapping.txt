@@ -6,8 +6,8 @@ org/tom_v_squad/soiwenttoaconcert/data/UserRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.UserRepository
 org/tom_v_squad/soiwenttoaconcert/SoiwenttoaconcertApplication.java
  org.tom_v_squad.soiwenttoaconcert.SoiwenttoaconcertApplication
-org/tom_v_squad/soiwenttoaconcert/controllers/EventController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.EventController
+org/tom_v_squad/soiwenttoaconcert/controllers/ProfileController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.ProfileController
 org/tom_v_squad/soiwenttoaconcert/AuthenticationFilter.java
  org.tom_v_squad.soiwenttoaconcert.AuthenticationFilter
 org/tom_v_squad/soiwenttoaconcert/models/DTO/LoginFormDTO.java
@@ -32,5 +32,5 @@ org/tom_v_squad/soiwenttoaconcert/data/ProfileRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.ProfileRepository
 org/tom_v_squad/soiwenttoaconcert/models/Profile.java
  org.tom_v_squad.soiwenttoaconcert.models.Profile
-org/tom_v_squad/soiwenttoaconcert/controllers/ProfileController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.ProfileController
+org/tom_v_squad/soiwenttoaconcert/controllers/EventController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.EventController
