@@ -34,6 +34,8 @@ public class EventData {
             theValue = event.getArtistName();
         } else if (fieldName.equals("location")){
             theValue = event.getLocation().toString();
+        } else if (fieldName.equals("date")){
+            theValue = event.getDate().toString();
         } else {
             theValue = event.toString();
         }
@@ -54,8 +56,9 @@ public class EventData {
                 results.add(event);
             } else if (event.toString().toLowerCase().contains(lower_val)) {
                 results.add(event);
+            } else if (event.getDate().toLowerCase().contains(lower_val)) {
+                results.add(event);
             }
-
         }
 
         return results;

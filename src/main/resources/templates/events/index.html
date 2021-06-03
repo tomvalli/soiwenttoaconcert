@@ -10,6 +10,7 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Genre</th>
         <th>Location</th>
         <th>Date</th>
         <th>Venue</th>
@@ -20,9 +21,10 @@
     <tr th:each="event : ${events}">
         <td th:text="${event.eventId}"></td>
         <td th:text="${event.artistName}"></td>
+        <td th:text="${event.genre}"></td>
         <td th:text="${event.location}"></td>
         <td th:text="${event.date}"></td>
-        <td th:text="${event.venueId}"></td>
+        <td th:text="${event.venueName}"></td>
         <td th:text="${event.festival}"></td>
         <td th:if = "${attendedEvents.contains(event)}">Attended</td>
         <td th:unless = "${attendedEvents.contains(event)}">Not Attended</td>

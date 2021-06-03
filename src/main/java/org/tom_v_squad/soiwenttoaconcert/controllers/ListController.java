@@ -30,8 +30,9 @@ public class ListController {
 
     public ListController () {
     columnChoices.put("venues", "Venues");
-    columnChoices.put("events", "Events");
     columnChoices.put("artists", "Artists");
+    columnChoices.put("genre", "Genre");
+    columnChoices.put("all","All");
     }
 
     @RequestMapping("")
@@ -51,6 +52,7 @@ public class ListController {
             events = eventRepository.findAll();
             model.addAttribute("events", "Events");
         } else {
+            value.toLowerCase();
             events = EventData.findByColumnAndValue(column, value, eventRepository.findAll());
             model.addAttribute("title", "Events with " + columnChoices.get(column) + ": " + value);
         }

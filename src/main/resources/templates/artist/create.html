@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
 <body>
-
+<header th:replace="fragments :: header"></header>
+<div class="container" style="margin-top:115px;">
+<form method = "post">
+    <h1> Add an Artist</h1>
+    <div>
+        <label>Artist/Band
+            <input class="form-control my-3 p-4" type ="text" name ="artistName">
+        </label>
+    </div>
+    <div>
+        <label>Genre
+            <input class="form-control my-3 p-4" type ="text" name ="artistGenre">
+        </label>
+    </div>
+    <div>
+        <input class="btn btn-secondary btn-lg" type = "submit" value="Add Artist">
+    </div>
+</form>
+</div>
 </body>
 </html>

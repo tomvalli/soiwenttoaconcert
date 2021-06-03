@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.tom_v_squad.soiwenttoaconcert.data.ArtistRepository;
 import org.tom_v_squad.soiwenttoaconcert.data.EventRepository;
+import org.tom_v_squad.soiwenttoaconcert.data.UserRepository;
 import org.tom_v_squad.soiwenttoaconcert.data.VenueRepository;
 import org.tom_v_squad.soiwenttoaconcert.models.Event;
 import org.tom_v_squad.soiwenttoaconcert.models.EventData;
@@ -19,13 +20,16 @@ import static org.tom_v_squad.soiwenttoaconcert.controllers.ListController.colum
 public class SearchController {
 
     @Autowired
+    private EventRepository eventRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private ArtistRepository artistRepository;
 
     @Autowired
     private VenueRepository venueRepository;
-
-    @Autowired
-    private EventRepository eventRepository;
 
     @RequestMapping("")
     public String search(Model model) {
@@ -36,9 +40,10 @@ public class SearchController {
     @PostMapping("results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
         Iterable<Event> events;
-        if (searchType.toLowerCase().equals("all") || searchTerm.equals("")){
+        if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")){
             events = eventRepository.findAll();
         } else {
+
             events = EventData.findByColumnAndValue(searchType, searchTerm, eventRepository.findAll());
             //events = EventData.findByValue(searchTerm, events);
         }

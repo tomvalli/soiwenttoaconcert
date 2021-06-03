@@ -17,17 +17,20 @@ public class Event {
     private String date;
     private boolean festival;
     private int venueId;
+    private String genre;
 
     @ManyToMany(mappedBy = "events")
     private final List<User> users = new ArrayList<>();
 
-    public Event(int eventId, String artistName, String location, String date, boolean festival, int venueId) {
+    public Event(int eventId, String artistName, String location, String date, boolean festival, int venueId, String genre) {
         this.eventId = eventId;
         this.artistName = artistName;
         this.location = location;
         this.date = date;
         this.festival = festival;
         this.venueId = venueId;
+        this.genre = genre;
+
     }
 
     public Event() { }
@@ -74,6 +77,14 @@ public class Event {
 
     public int getEventId() {
         return eventId;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public List<User> getUsers() {

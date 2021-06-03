@@ -1,6 +1,7 @@
 package org.tom_v_squad.soiwenttoaconcert.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,10 +13,14 @@ public class Venue {
     @GeneratedValue
     private int venueId;
 
+    @NotBlank(message = "Please enter venue name.")
     private String venueName;
+    @NotBlank(message = "What city is the venue in?")
     private String venueLocation;
 
-
+    @OneToMany
+    @JoinColumn
+    private final List<Venue> venues = new ArrayList<>();
 
     public Venue(int venueId, String venueName, String venueLocation) {
         this.venueId = venueId;

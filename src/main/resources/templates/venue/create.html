@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Venues</title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
-
+<header th:replace="fragments :: header"></header>
+<div class="container" style="margin-top:115px;">
+<form method = "post">
+    <div>
+        <label>Venue Name
+            <input class="form-control my-3 p-4" type ="text" name ="venueName">
+        </label>
+    </div>
+    <div>
+        <label>City
+            <input class="form-control my-3 p-4" type ="text" name ="venueLocation">
+        </label>
+    </div>
+    <div>
+        <input class="btn btn-secondary btn-lg" type = "submit" value="Add to Venues">
+    </div>
+    <div>
+        <a href="venue/"><input type="submit" value=" My Venues 🎫"/></a>
+    </div>
+</form>
+</div>
 </body>
 </html>
