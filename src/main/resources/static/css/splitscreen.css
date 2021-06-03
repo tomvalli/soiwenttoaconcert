@@ -4,7 +4,7 @@
    width: 50%;
    position: fixed;
    z-index: 1;
-   top: 0;
+   top: 0 !important;
    overflow-x: hidden;
    padding-top: 20px;
  }
@@ -12,13 +12,13 @@
  /* Control the left side */
  .left {
    left: 0;
-   background-color: #ededed;
+   background-color: #ededed ;
  }
 
  /* Control the right side */
  .right {
    right: 0;
-   background-color: #white;
+   background-color: #white ;
  }
 
  /* If you want the content centered horizontally and vertically */
