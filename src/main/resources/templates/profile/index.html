@@ -8,14 +8,45 @@
         <!--     First Half -->
         <div class="split left">
             <div class="centered">
-                <h1>Index</h1>
+                <h1>Profile</h1>
             </div>
         </div>
 
         <!-- Second Half -->
         <div class="split right">
             <div class="centered">
-                <h1>Index</h1>
+<!--                <ul th:each="event : ${events}" class="list-group">-->
+<!--                    <li class="list-group-item">Name</li>-->
+<!--                    &lt;!&ndash;                    <li th:text="${user.username}" class="list-group-item">Name</li>&ndash;&gt;-->
+<!--                    <li class="list-group-item"> I.D.</li>-->
+<!--&lt;!&ndash;                    <li th:text="${profile.profileId}" class="list-group-item"> I.D.</li>&ndash;&gt;-->
+<!--                    <li class="list-group-item">City</li>-->
+<!--                    <li th:text="${profileLocation}">City</li>-->
+<!--&lt;!&ndash;                    <li th:text="${profile.profileLocation}" class="list-group-item">City</li>&ndash;&gt;-->
+<!--                    <li class="list-group-item">Bio</li>-->
+<!--&lt;!&ndash;                    <li th:text="${profile.profileBiography}" class="list-group-item">Bio</li>&ndash;&gt;-->
+<!--                </ul>-->
+<!--                <h1>Update profile</h1>-->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+<!--                        <th>Name</th>-->
+                        <th>ProfileId</th>
+                        <th>City</th>
+                        <th>Bio</th>
+                        <th>Other</th>
+                    </tr>
+                    </thead>
+                    <tr th:each="profile : ${profiles}">
+<!--                        <td th:text="${user.username}"></td>-->
+                        <td th:text="${profile.profileId}"></td>
+                        <td th:text="${profile.profileLocation}"></td>
+                        <td th:text="${profile.profileBiography}"></td>
+                        <td>
+                            <a th:href="'/profile/update?profileId=' + ${profile.profileId}">Edit</a>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

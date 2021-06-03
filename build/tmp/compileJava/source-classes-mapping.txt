@@ -2,6 +2,10 @@ org/tom_v_squad/soiwenttoaconcert/controllers/AuthenticationController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.AuthenticationController
 org/tom_v_squad/soiwenttoaconcert/data/VenueRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.VenueRepository
+org/tom_v_squad/soiwenttoaconcert/models/Profile.java
+ org.tom_v_squad.soiwenttoaconcert.models.Profile
+org/tom_v_squad/soiwenttoaconcert/data/ProfileRepository.java
+ org.tom_v_squad.soiwenttoaconcert.data.ProfileRepository
 org/tom_v_squad/soiwenttoaconcert/data/UserRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.UserRepository
 org/tom_v_squad/soiwenttoaconcert/SoiwenttoaconcertApplication.java
