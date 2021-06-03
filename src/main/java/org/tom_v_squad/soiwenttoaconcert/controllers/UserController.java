@@ -26,8 +26,6 @@ public class UserController {
 
     private static final String event = "event";
 
-
-
     public User getUserFromSession(HttpSession session) {
 
         Integer userId = (Integer) session.getAttribute(userSessionKey);
@@ -41,17 +39,13 @@ public class UserController {
             return null;
         }
         return user.get();
-
     }
-
 
     @GetMapping("/")
     public String displayWelcomeName(HttpServletRequest request, Model model) {
-        //give user's name from login/session to user profile template
         User user = getUserFromSession(request.getSession());
         String username = user.getUsername();
         model.addAttribute("greeting", username);
-        //give list of all events to user profile template
         model.addAttribute("event", "List Event");
         model.addAttribute("events", eventRepository.findAll());
         return "index";
