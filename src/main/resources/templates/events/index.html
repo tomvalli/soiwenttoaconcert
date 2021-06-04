@@ -24,7 +24,7 @@
                     <td th:text="${event.artistName}"></td>
                     <td th:text="${event.location}"></td>
                     <td th:text="${event.date}"></td>
-                    <td th:text="${event.venueName}"></td>
+                    <td th:text="${event.venue}"></td>
                     <td th:text="${event.festival}"></td>
                     <td th:if = "${attendedEvents.contains(event)}">Attended</td>
                     <td th:unless = "${attendedEvents.contains(event)}">Not Attended</td>

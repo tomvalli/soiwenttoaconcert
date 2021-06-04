@@ -58,7 +58,7 @@ public class VenueController {
          return "venue/create";
       }
       venueRepository.save(newVenue);
-      return "redirect:";
+      return "redirect:/venue";
    }
 
    @GetMapping("delete")
