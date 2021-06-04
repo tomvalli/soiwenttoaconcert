@@ -42,6 +42,7 @@ public class SearchController {
         Iterable<Event> events;
         if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")){
             events = eventRepository.findAll();
+
         } else {
 
             events = EventData.findByColumnAndValue(searchType, searchTerm, eventRepository.findAll());

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container" style="margin-top:115px;">
+    <h1>Delete Concert Event</h1>
+    <form method="post">
+        <div class="form-group">
+            <label>
+                <span th:text="${event.artistName}"></span>
+                <span th:text="${event.location}"></span>
+                <span th:text="${event.date}"></span>
+                <span th:text="${event.venueId}"></span>
+                <span th:text="${event.festival}"></span>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="eventId" th:value="${event.eventId}">
+                </div>
+            </label>
+        </div>
+        <input class="btn btn-secondary btn-lg" type="submit" value="Delete Selected Events">
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Delete Concert Event</h1>-->
+
+<!--<form method="post">-->
+<!--        <div class="form-group">-->
+<!--            <label>-->
+<!--                <span th:text="${event.artistName}"></span>-->
+<!--                <span th:text="${event.location}"></span>-->
+<!--                <span th:text="${event.date}"></span>-->
+<!--                <span th:text="${event.venueId}"></span>-->
+<!--                <span th:text="${event.festival}"></span>-->
+<!--                <input type="checkbox" name="eventId" th:value="${event.eventId}" class="form-control">-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    <input class="btn btn-secondary btn-lg" type="submit" value="Delete Selected Events" class="btn btn-danger">-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->

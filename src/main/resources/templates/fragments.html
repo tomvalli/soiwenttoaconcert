@@ -2,12 +2,67 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title>So I Went To A Concert</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <title>SITS</title>
+
+    <link rel="shortcut icon" type="image/png" th:href="@{/images/favicon.ico}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link href="css/splitscreen.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .logo {
+          vertical-align: baseline;
+          margin-left: 20px;
+        }
+        .bg-light {
+          background-color: rgb(46, 255, 154) !important;
+        }
+    </style>
+
 </head>
 <body>
 
 <header th:fragment="header">
-    <h1 th:text="${title}">So I Went To A Concert</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="">
+                <img class="logo" th:src="@{~/images/logo.png}" width="auto" height="30px">
+                <strong>So I Went To A Show</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="..">Profile 👩‍🎤👨‍🎤🧑‍🎤</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/events/index}"> View Events 🎤</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/events/create}">Create Event 🎫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/venue}">Venue 🎫️</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/artist}">Artist 🧑‍🎤</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/search}">Find Your Events 🎫️️</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/logout}">Log Out ✌️</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
 </header>
 
 </body>

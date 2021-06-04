@@ -31,7 +31,7 @@ public class ListController {
     public ListController () {
     columnChoices.put("venues", "Venues");
     columnChoices.put("artists", "Artists");
-    columnChoices.put("genre", "Genre");
+    columnChoices.put("genre", "Genres");
     columnChoices.put("all","All");
     }
 

@@ -16,19 +16,21 @@ public class Event {
     private String location;
     private String date;
     private boolean festival;
-    private int venueId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Venue venue;
     private String genre;
 
     @ManyToMany(mappedBy = "events")
     private final List<User> users = new ArrayList<>();
 
-    public Event(int eventId, String artistName, String location, String date, boolean festival, int venueId, String genre) {
+    public Event(int eventId, String artistName, String location, String date, boolean festival, Venue venue, String genre) {
         this.eventId = eventId;
         this.artistName = artistName;
         this.location = location;
         this.date = date;
         this.festival = festival;
-        this.venueId = venueId;
+        this.venue = venue;
         this.genre = genre;
 
     }
@@ -67,12 +69,13 @@ public class Event {
         this.festival = festival;
     }
 
-    public int getVenueId() {
-        return venueId;
+
+    public Venue getVenue() {
+        return venue;
     }
 
-    public void setVenueId(int venueId) {
-        this.venueId = venueId;
+    public void setVenue(Venue venue) {
+        this.venue = venue;
     }
 
     public int getEventId() {
@@ -95,9 +98,6 @@ public class Event {
     public String toString() {
         return artistName;
     }
-
-    //Generate Hash / Equals??? 17.5.2.2
-
 
     @Override
     public boolean equals(Object o) {
