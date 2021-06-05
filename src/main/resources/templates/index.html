@@ -9,6 +9,9 @@
             <div class="centered">
                 <h1>Welcome </h1>
                 <h2 th:text="${greeting}">Greetings</h2>
+                <br/>
+                <p>Update profile</p>
+                <button onclick="window.location.href='../profile/index';" type="button" class="btn btn-secondary">Update</button>
             </div>
         </div>
 
@@ -27,6 +30,8 @@
                         <td th:text="${event.date}"></td>
                     </tr>
                 </table>
+                <br/>
+                <button onclick="window.location.href='../events/create';" type="button" class="btn btn-secondary">Update</button>
             </div>
         </div>
     </div>

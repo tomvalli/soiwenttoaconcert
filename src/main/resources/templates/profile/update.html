@@ -7,14 +7,43 @@
         <!--     First Half -->
         <div class="split left">
             <div class="centered">
-                <h1>Update</h1>
+                <h2>Update </h2>
+                <h2>Profile</h2>
             </div>
         </div>
 
         <!-- Second Half -->
         <div class="split right">
-            <div class="centered">
-                <h1>Update</h1>
+<!--            <div class="nothing">-->
+                <div class="centered">
+
+
+                <form class="fieldWidth" action=>
+                    <div class="form-group">
+                        <label for="username">USER NAME</label>
+                        <input type="text" class="form-control" id="username" placeholder="Update Name" name="username"><br/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">EMAIL</label>
+                        <input type="email" class="form-control" id="email" placeholder="Update email" name="email">
+                        <label><input type="checkbox" name="remember"> private</label><br/><br/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userLocation">CITY</label>
+                        <input type="text" class="form-control" id="userLocation" placeholder="Enter Location" name="userLocation">
+                        <label id="checkbox"><input type="checkbox" name="remember"> private</label><br/><br/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userBiogrophy">BIO</label>
+                        <input type="text" class="form-control" id="userBiogrophy" placeholder="Enter Discription" name="userBiogrophy">
+                        <label style="text-align:right"><input type="checkbox" name="remember"> private</label><br/><br/>
+                    </div>
+                    <br/>
+                    <button onclick="window.location.href='../profile/index';" type="button" class="btn btn-secondary">Submit</button>
+                </form>
             </div>
         </div>
     </div>

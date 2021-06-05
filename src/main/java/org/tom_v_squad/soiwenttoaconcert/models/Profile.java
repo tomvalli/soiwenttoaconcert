@@ -58,8 +58,6 @@ public class Profile {
         this.profileBiography = profileBiography;
     }
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
