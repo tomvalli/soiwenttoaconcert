@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container" style="margin-top:115px;">
+<form method="post">
+    <div class="form-group">
+        <label>
+            <span th:text="${artist.artistId}"></span>
+            <span th:text="${artist.artistName}"></span>
+            <span th:text="${artist.artistGenre}"></span>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="artistId" th:value="${artist.artistId}">
+            </div>
+        </label>
+        <input class="btn btn-secondary btn-lg" type="submit" value="Delete Selected Artists">
+    </div>
+
+</form>
+</div>
+</body>
+</html>

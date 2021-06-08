@@ -25,23 +25,37 @@ public class ProfileController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("view")
-    public String goView() {
-//        System.out.println("In Profile Controller");
-        return "profile/view";
-    }
+//    @GetMapping("view")
+//    public String goView() {
+////        System.out.println("In Profile Controller");
+//        return "profile/view";
+//    }
+
+
 
     @GetMapping("update")
     public String goUpdate() {
-//        System.out.println("In Profile Controller");
         return "profile/update";
     }
 
     @PostMapping("update")
     public String sendUpdate() {
-//        System.out.println("In Profile Controller");
         return "profile/update";
     }
+
+
+
+//    @GetMapping("update")
+//    public String goUpdate() {
+    //        System.out.println("This mapping works");
+//        return "profile/update";
+//    }
+
+//    @PostMapping("update")
+//    public String sendUpdate() {
+    //        System.out.println("This mapping works");
+//        return "profile/update";
+//    }
 
     @GetMapping("index")
     public String displayUserProfile(HttpSession session, Model model) {

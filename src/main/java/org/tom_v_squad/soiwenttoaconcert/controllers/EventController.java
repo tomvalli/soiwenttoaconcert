@@ -4,9 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.tom_v_squad.soiwenttoaconcert.data.ArtistRepository;
+
 import org.springframework.web.bind.annotation.*;
+
 import org.tom_v_squad.soiwenttoaconcert.data.EventRepository;
 import org.tom_v_squad.soiwenttoaconcert.data.UserRepository;
+import org.tom_v_squad.soiwenttoaconcert.data.VenueRepository;
 import org.tom_v_squad.soiwenttoaconcert.models.DTO.UserEventDTO;
 import org.tom_v_squad.soiwenttoaconcert.models.Event;
 import org.tom_v_squad.soiwenttoaconcert.models.User;
@@ -26,9 +35,15 @@ public class EventController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private ArtistRepository artistRepository;
+
+    @Autowired
+    private VenueRepository venueRepository;
+
     @GetMapping("create")
     public String displayCreateEventForm(Model model) {
-    model.addAttribute("title", "Create Event");
+//    model.addAttribute("title", "Create Event");
     model.addAttribute(new Event());
     return "events/create";
 }

@@ -2,93 +2,63 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments :: head"></head>
 <body>
-    <header th:replace="fragments :: header"></header>
-    <div class="container" style="margin-top:115px;">
-        <h3>
-            You did not find the event you were looking for... 🙀 <strong>DON'T WORRY!</strong> <br>
-            <small class="text-muted">Add concert events, others will appreciate it ❤️🖤💚💜🤎🤍️💛💙</small>
-        </h3>
-        <br>
-        <hr class="style1">
-        <h2>New Concert Event</h2>
-        <div th:if = "${successAlert}" class="alert alert-success" role="alert">
-            Event successfully created!
-        </div>
-        <div th:if = "${failAlert}" class="alert alert-warning" role="alert">
-            Something went wrong, please try again!
-        </div>
-        <section class="Form my-4 mx-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-8 px-0 pt-0">
-                        <form method="post">
-                            <div class="form-row">
-                                <!--TODO: add event review field ek-->
-                                <div class="col-lg-8">
-                                    <label>Artist
-                                        <input type="text" name="artistName" placeholder="Artist/Band" class="form-control my-3 p-4">
-                                    </label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <label>Location
-                                        <input type="text" name="location" placeholder="Location (i.e. St. Louis)" class="form-control my-3 p-4">
-                                    </label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <label>Date
-                                        <input type="datetime-local" name="date" class="form-control my-3 p-4">
-                                    </label>
-                                </div>
-                                <!--TODO: add an existing venues selection-->
-                                <div class="col-lg-8">
-                                    <label>Venue
-                                        <input type="text" name="venue" class="form-control my-3 p-4">
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="festival" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Is this part of a festival?
-                                    </label>
-                                </div>
-                                <br>
-                                <input class="btn btn-secondary btn-lg" type="submit" value="Create Event 🎫">
+<header th:replace="fragments :: header"></header>
+<div class="container" style="margin-top:115px;">
+    <h3>
+        You did not find the event you were looking for... 🙀 <strong>DON'T WORRY!</strong> <br>
+        <small class="text-muted">Add concert events, others will appreciate it ❤️🖤💚💜🤎🤍️💛💙</small>
+    </h3>
+    <br>
+    <hr class="style1">
+    <h2>New Concert Event</h2>
+    <div th:if = "${successAlert}" class="alert alert-success" role="alert">
+        Event successfully created!
+    </div>
+    <div th:if = "${failAlert}" class="alert alert-warning" role="alert">
+        Something went wrong, please try again!
+    </div>
+    <section class="Form my-4 mx-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 px-0 pt-0">
+                    <form method="post">
+                        <div class="form-row">
+                            <!--TODO: add event review field ek-->
+                            <div class="col-lg-8">
+                                <label>Artist
+                                    <input type="text" name="artistName" placeholder="Artist/Band" class="form-control my-3 p-4">
+                                </label>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-lg-8">
+                                <label>Location
+                                    <input type="text" name="location" placeholder="Location (i.e. St. Louis)" class="form-control my-3 p-4">
+                                </label>
+                            </div>
+                            <div class="col-lg-8">
+                                <label>Date
+                                    <input type="datetime-local" name="date" class="form-control my-3 p-4">
+                                </label>
+                            </div>
+                            <!--TODO: add an existing venues selection-->
+                            <div class="col-lg-8">
+                                <label>Venue
+                                    <input type="text" name="venue" class="form-control my-3 p-4">
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="festival" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Is this part of a festival?
+                                </label>
+                            </div>
+                            <br>
+                            <input class="btn btn-secondary btn-lg" type="submit" value="Create Event 🎫">
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-
-<h1>Add Concert Event</h1>
-
-<form method="post">
-    <table>
-        <tr>
-            <td>Artist</td>
-            <td><input type="text" name="artistName"/></td>
-        </tr>
-        <tr>
-            <td>Location</td>
-            <td><input type="text" name="location"/></td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td><input type="text" name="date"/></td>
-        </tr>
-        <tr>
-            <td>Venue</td>
-            <td><input type="text" name="venue"/></td>
-        </tr>
-        <tr>
-            <td>Is this a festival?</td>
-            <td><input type="checkbox" name="festival"/></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Add Concert"/></td>
-        </tr>
-    </table>
-</form>
-    </div>
+        </div>
+    </section>
+</div>
 </body>
 </html>

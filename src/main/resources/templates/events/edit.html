@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
-<h1>Edit Concert Event</h1>
-
-<form  th:object="${event}" method="post">
-    <input th:field = "${event.artistName}" label= "artist" type="text" name="artistName">Artist</label>
-    <br>
-    <input th:field = "${event.location}" label="location" type="text" name="location">Location</label>
-    <br>
-    <input th:field = "${event.date}" label="date" type="text" name="date">Date</label>
-    <br>
-    <input th:field = "${event.venueId}" label="venue" type="text" name="venue">Venue</label>
-    <br>
-    <input th:field = "${event.festival}" label="festival" type="checkbox" name="festival" value="Festival">Is this part of a festival?</label>
-    <br>
-    <input type="submit" value="Edit Concert">
-</form>
+<header th:replace="fragments :: header"></header>
+<div class="container" style="margin-top:115px;">
+    <h2>Edit Concert Event</h2>
+    <form  th:object="${event}" method="post">
+        <input th:field = "${event.artistName}" label= "artist" type="text" name="artistName">Artist</label>
+        <br>
+        <input th:field = "${event.location}" label="location" type="text" name="location">Location</label>
+        <br>
+        <input th:field = "${event.date}" label="date" type="text" name="date">Date</label>
+        <br>
+        <input th:field = "${event.venueId}" label="venue" type="text" name="venue">Venue</label>
+        <br>
+        <input th:field = "${event.festival}" label="festival" type="checkbox" name="festival" value="Festival">Is this part of a festival?</label>
+        <br>
+        <input class="btn btn-secondary btn-lg" type="submit" value="Edit Concert">
+    </form>
+</div>
 </body>
 </html>
