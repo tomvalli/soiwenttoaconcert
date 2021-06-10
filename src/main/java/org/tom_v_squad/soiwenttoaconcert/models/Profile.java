@@ -10,24 +10,49 @@ public class Profile {
     @GeneratedValue
     @Column(name="profile_id")
     private int profileId;
-
     @Column(name="profile_location")
     private String profileLocation;
-
     @Column(name="profile_biography")
     private String profileBiography;
 
+//    @OneToOne
+//    private User user;
+
     ///// constructors
-    public Profile() {}
-
-    public Profile(String profileLocation) {
-        this.profileLocation = profileLocation;
-    }
-
-    public Profile(String profileLocation, String profileBiography) {
+    public Profile(int profileId, String profileLocation, String profileBiography) {
+        this.profileId = profileId;
         this.profileLocation = profileLocation;
         this.profileBiography = profileBiography;
     }
+
+    public Profile() {
+        this.profileId = profileId++;
+    }
+
+    ///////  methods
+    public int getProfileId() { return profileId; }
+
+    public String getProfileLocation() {
+        return profileLocation;
+    }
+
+    public void setProfileLocation(String profileLocation) {
+        this.profileLocation = profileLocation;
+    }
+
+    public String getProfileBiography() {
+        return profileBiography;
+    }
+
+//    public String profileLocation() {
+//        return profileLocation;
+//    }
+
+//    public void setProfileBiography(String profileBiography) { this.profileBiography = profileBiography; }
+// public Profile(String profileLocation) {
+//        this.profileLocation = profileLocation;
+//    }
+
 
 
 
@@ -36,35 +61,17 @@ public class Profile {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Profile profile = (Profile) o;
-        return profileId == profile.profileId;
+        return profileId == profile.profileId &&
+                profileLocation.equals(profile.profileLocation) &&
+                profileBiography.equals(profile.profileBiography);
     }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(profileId);
-//    }
-//
-
-    public String profileLocation() {
-        return profileLocation;
+    @Override
+    public int hashCode() {
+        return Objects.hash(profileId, profileLocation, profileBiography);
     }
 
-    public void setProfileLocation(String profileLocation) {
-        this.profileLocation = profileLocation;
-    }
 
-    public void setProfileBiography(String profileBiography) { this.profileBiography = profileBiography; }
 
-    public int getProfileId() {
-        return profileId;
-    }
-
-    public String getProfileLocation() {
-        return profileLocation;
-    }
-
-    public String getProfileBiography() {
-        return profileBiography;
-    }
 }
 

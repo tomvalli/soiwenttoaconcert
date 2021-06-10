@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container" style="margin-top:115px;">
+  <form method = "post">
+    <h1> Add a profile</h1>
+    <div>
+      <label>Location
+        <input class="form-control my-3 p-4" type ="text" name ="profileLocation">
+      </label>
+    </div>
+    <div>
+      <label>Biography
+        <input class="form-control my-3 p-4" type ="text" name ="profileBiography">
+      </label>
+    </div>
+    <div>
+      <input class="btn btn-secondary btn-lg" type = "submit" value="Add profile">
+    </div>
+  </form>
+</div>
+</body>
+</html>

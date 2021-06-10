@@ -4,10 +4,7 @@ package org.tom_v_squad.soiwenttoaconcert.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.tom_v_squad.soiwenttoaconcert.data.ProfileRepository;
 import org.tom_v_squad.soiwenttoaconcert.data.UserRepository;
 import org.tom_v_squad.soiwenttoaconcert.models.Event;
@@ -29,20 +26,26 @@ public class ProfileController {
 
     @GetMapping("update")
     public String goUpdate(HttpSession session, Model model) {
+        System.out.println("@@@@@@@@@@@@");
         Integer userId = (Integer) session.getAttribute("user");
         Optional<User> result = userRepository.findById(userId);
         User user = result.get();
-        Optional<Profile> profileResult = profileRepository.findById(user.getProfile().getProfileId());
+        if(user.getProfile()==null) {
+            user.setProfile(new Profile());
+            // need to po
+        }
         model.addAttribute("users_name", user.getUsername());
         model.addAttribute("profile", user.getProfile());
         return "profile/update";
+
     }
 
-    @PostMapping("update")
-    public String sendUpdate(@ModelAttribute Profile profile, Model model) {
-
+    @PostMapping(path="/update")
+    public String sendUpdate(@RequestBody Profile profile, Model model) {
+        System.out.println("#########");
+        profileRepository.save(profile);
         model.addAttribute("profile", profile);
-        model.addAttribute(new Profile());
+//        model.addAttribute(new Profile());
         return "profile/update";
     }
 
@@ -53,6 +56,9 @@ public class ProfileController {
         Optional<User> result = userRepository.findById(userId);
         User user = result.get();
         Optional<Profile> profileResult = profileRepository.findById(user.getProfile().getProfileId());
+        if(profileResult==null) {
+            System.out.println("null@@@@@@@@@@@@");
+        } else
         model.addAttribute("users_name", user.getUsername());
         model.addAttribute("profile", user.getProfile());
 

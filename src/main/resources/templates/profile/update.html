@@ -22,7 +22,10 @@
                 Something went wrong, please try again!
             </div>
             <div class="centered">
-                <form class="fieldWidth" action="#" th:action="@{/update}" th:object="${profile}" method="POST">
+                <form class="fieldWidth" action="#" th:action="@{/update}" th:object="${profile}" method="post">
+
+<!--                    <form  th:object="${artist}" method="post">-->
+<!--                        <input th:field = "${artist.artistName}" label= "artist" type="text" name="artistName">Artist</label>-->
 
                     <div class="form-group">
                         <label for="usersname">NAME</label>
