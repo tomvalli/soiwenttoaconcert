@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.tom_v_squad.soiwenttoaconcert.data.ProfileRepository;
 import org.tom_v_squad.soiwenttoaconcert.data.UserRepository;
 import org.tom_v_squad.soiwenttoaconcert.models.Event;
-import org.tom_v_squad.soiwenttoaconcert.models.Greeting;
 import org.tom_v_squad.soiwenttoaconcert.models.Profile;
 import org.tom_v_squad.soiwenttoaconcert.models.User;
 

@@ -89,6 +89,10 @@
     width: 300px;
   }
 
+#profileBiography {
+    height: 90px;
+}
+
  .checkbox {
  text-align: right;
  }

@@ -22,7 +22,11 @@ public class Profile {
 
     public Profile(String profileLocation) {
         this.profileLocation = profileLocation;
+    }
 
+    public Profile(String profileLocation, String profileBiography) {
+        this.profileLocation = profileLocation;
+        this.profileBiography = profileBiography;
     }
 
 
@@ -40,13 +44,6 @@ public class Profile {
 //        return Objects.hash(profileId);
 //    }
 //
-//    public int getProfileId() {
-//        return profileId;
-//    }
-//
-//    public void setProfileId(int profileId) {
-//        this.profileId = profileId;
-//    }
 
     public String profileLocation() {
         return profileLocation;
@@ -55,6 +52,8 @@ public class Profile {
     public void setProfileLocation(String profileLocation) {
         this.profileLocation = profileLocation;
     }
+
+    public void setProfileBiography(String profileBiography) { this.profileBiography = profileBiography; }
 
     public int getProfileId() {
         return profileId;
