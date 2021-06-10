@@ -38,19 +38,13 @@ org/tom_v_squad/soiwenttoaconcert/controllers/ArtistController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.ArtistController
 org/tom_v_squad/soiwenttoaconcert/controllers/ListController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.ListController
-org/tom_v_squad/soiwenttoaconcert/data/GreetingRepository.java
- org.tom_v_squad.soiwenttoaconcert.data.GreetingRepository
+org/tom_v_squad/soiwenttoaconcert/data/EventRepository.java
+ org.tom_v_squad.soiwenttoaconcert.data.EventRepository
 org/tom_v_squad/soiwenttoaconcert/models/DTO/LoginFormDTO.java
  org.tom_v_squad.soiwenttoaconcert.models.DTO.LoginFormDTO
 org/tom_v_squad/soiwenttoaconcert/models/User.java
  org.tom_v_squad.soiwenttoaconcert.models.User
 org/tom_v_squad/soiwenttoaconcert/WebApplicationConfig.java
  org.tom_v_squad.soiwenttoaconcert.WebApplicationConfig
-org/tom_v_squad/soiwenttoaconcert/data/EventRepository.java
- org.tom_v_squad.soiwenttoaconcert.data.EventRepository
 org/tom_v_squad/soiwenttoaconcert/models/DTO/RegisterFormDTO.java
  org.tom_v_squad.soiwenttoaconcert.models.DTO.RegisterFormDTO
-org/tom_v_squad/soiwenttoaconcert/controllers/GreetingController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.GreetingController
-org/tom_v_squad/soiwenttoaconcert/models/Greeting.java
- org.tom_v_squad.soiwenttoaconcert.models.Greeting

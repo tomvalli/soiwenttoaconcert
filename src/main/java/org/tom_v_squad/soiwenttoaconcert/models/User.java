@@ -23,9 +23,8 @@ public class User {
     @ManyToMany
     private final List<Event> events = new ArrayList<Event>();
 
-    private String userLocation;
-
-    private String userBiography;
+    @OneToOne
+    private Profile profile;
 
     public User() {}
 
@@ -34,10 +33,18 @@ public class User {
         this.pwHash = encoder.encode(password);
     }
 
-    public User(String username, String userBiography, String userLocation ) {
+    public User(String username) {
         this.username = username;
-        this.userBiography = userBiography;
-        this.userLocation = userLocation;
+    }
+
+    public void addEvent(Event event) {
+        this.events.add(event);
+    }
+
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+    public boolean isMatchingPassword(String password) {
+        return encoder.matches(password, pwHash);
     }
 
     public int getId() {
@@ -48,27 +55,31 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) { this.username = username; }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPwHash() {
+        return pwHash;
+    }
+
+    public void setPwHash(String pwHash) {
+        this.pwHash = pwHash;
+    }
 
     public List<Event> getEvents() {
         return events;
     }
 
-    public void addEvent(Event event) {
-        this.events.add(event);
+    public Profile getProfile() {
+        return profile;
     }
 
-    public String getUserLocation() { return userLocation; }
-
-    public void setUserLocation(String userLocation) { this.userLocation = userLocation; }
-
-    public String getUserBiography() { return userBiography; }
-
-    public void setUserBiography(String userBiography) { this.userBiography = userBiography; }
-
-    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
-    public boolean isMatchingPassword(String password) {
-        return encoder.matches(password, pwHash);
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
-}
+
+
+
+    }
+

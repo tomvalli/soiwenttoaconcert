@@ -4,6 +4,7 @@
 <body>
     <header th:replace="fragments :: header"></header>
     <div class="container">
+
         <!--     First Half -->
         <div class="split left">
             <div class="centered">
@@ -20,35 +21,42 @@
             <div th:if = "${failAlert}" class="alert alert-warning" role="alert">
                 Something went wrong, please try again!
             </div>
-<!--            <div class="nothing">-->
-                <div class="centered">
-
-
-                <form class="fieldWidth" action=>
-<!--                    <div class="form-group">-->
-<!--                        <label for="username">USER NAME</label>-->
-<!--                        <input type="text" class="form-control" id="username" placeholder="Update Name" name="username"><br/>-->
-<!--                    </div>-->
-
-<!--                    <div class="form-group">-->
-<!--                        <label for="email">EMAIL</label>-->
-<!--                        <input type="email" class="form-control" id="email" placeholder="Update email" name="email">-->
-<!--                        <label><input type="checkbox" name="remember"> private</label><br/><br/>-->
-<!--                    </div>-->
+            <div class="centered">
+                <form class="fieldWidth" action="#" th:action="@{/update}" th:object="${profile}" method="POST">
 
                     <div class="form-group">
-                        <label for="profileLocation">CITY</label>
-                        <input type="text" class="form-control" id="profileLocation" placeholder="Enter your city or location" name="profileLocation">
-                        <label id="checkbox"><input type="checkbox" name="remember"> private</label><br/><br/>
+                        <label for="profile.profileLocation">CITY</label>
+                        <input type="text" class="form-control"
+                               id="profile.profileLocation"
+                               placeholder="Enter your city or location"
+                               name="profile.profileLocation"
+                               th:field="${profile.profileLocation}"
+                        >
                     </div>
 
 <!--                    <div class="form-group">-->
-<!--                        <label for="userBiogrophy">BIO</label>-->
-<!--                        <input type="text" class="form-control" id="userBiogrophy" placeholder="Enter Discription" name="userBiogrophy">-->
-<!--                        <label style="text-align:right"><input type="checkbox" name="remember"> private</label><br/><br/>-->
+<!--                        <label for="profileEmail">EMAIL</label>-->
+<!--                        <input type="email" class="form-control"-->
+<!--                               id="profileEmail"-->
+<!--                               placeholder="Update email"-->
+<!--                               name="profileEmail"-->
+<!--                               th:field="${profileEmail}"-->
+<!--                        >-->
 <!--                    </div>-->
-                    <br/>
-                    <button onclick="window.location.href='../profile/index';" type="button" class="btn btn-secondary">Submit</button>
+
+<!--                    <div class="form-group">-->
+<!--                        <label for="profileBiography">BIO</label>-->
+<!--                        <input type="text" class="form-control"-->
+<!--                               id="profileBiography"-->
+<!--                               placeholder="Enter description"-->
+<!--                               name="profileBiography"-->
+<!--                               th:field="${profileBiography}"-->
+<!--                        >-->
+<!--                    </div>-->
+<!--                    <br/>-->
+<!--                    <button onclick="window.location.href='../profile/index';"-->
+<!--                            type="button"-->
+<!--                            class="btn btn-secondary">Submit</button>-->
                 </form>
             </div>
         </div>

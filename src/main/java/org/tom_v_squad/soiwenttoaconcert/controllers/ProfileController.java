@@ -5,10 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.tom_v_squad.soiwenttoaconcert.data.ProfileRepository;
 import org.tom_v_squad.soiwenttoaconcert.data.UserRepository;
+import org.tom_v_squad.soiwenttoaconcert.models.Event;
+import org.tom_v_squad.soiwenttoaconcert.models.Greeting;
 import org.tom_v_squad.soiwenttoaconcert.models.Profile;
 import org.tom_v_squad.soiwenttoaconcert.models.User;
 
@@ -25,37 +28,24 @@ public class ProfileController {
     @Autowired
     private UserRepository userRepository;
 
-//    @GetMapping("view")
-//    public String goView() {
-////        System.out.println("In Profile Controller");
-//        return "profile/view";
-//    }
-
-
-
     @GetMapping("update")
-    public String goUpdate() {
+    public String goUpdate(HttpSession session, Model model) {
+        Integer userId = (Integer) session.getAttribute("user");
+        Optional<User> result = userRepository.findById(userId);
+        User user = result.get();
+        Optional<Profile> profileResult = profileRepository.findById(user.getProfile().getProfileId());
+        model.addAttribute("users_name", user.getUsername());
+        model.addAttribute("profile", user.getProfile());
         return "profile/update";
     }
 
     @PostMapping("update")
-    public String sendUpdate() {
+    public String sendUpdate(@ModelAttribute Profile profile, Model model) {
+
+        model.addAttribute("profile", profile);
+        model.addAttribute(new Profile());
         return "profile/update";
     }
-
-
-
-//    @GetMapping("update")
-//    public String goUpdate() {
-    //        System.out.println("This mapping works");
-//        return "profile/update";
-//    }
-
-//    @PostMapping("update")
-//    public String sendUpdate() {
-    //        System.out.println("This mapping works");
-//        return "profile/update";
-//    }
 
     @GetMapping("index")
     public String displayUserProfile(HttpSession session, Model model) {
@@ -63,42 +53,10 @@ public class ProfileController {
         Integer userId = (Integer) session.getAttribute("user");
         Optional<User> result = userRepository.findById(userId);
         User user = result.get();
-
-//        Integer profileId = (Integer) profile.getAttribute("profile");
-//        Optional<Profile> result2 = profileRepository.findById(profileId);
-//        Profile profile = result2.get();
-
-
-//        model.addAttribute("profile", "Profile");
-//        model.addAttribute("event","List Event");
-//        model.addAttribute("profiles", profileRepository.findAll());
+        Optional<Profile> profileResult = profileRepository.findById(user.getProfile().getProfileId());
         model.addAttribute("users_name", user.getUsername());
-//        model.addAttribute("profile_Id", profileRepository.getProfileId());
-//        model.addAttribute("profile_Location", profileRepository.getProfileLocation());
-//        model.addAttribute( "profile_Biography", profileRepository.getProfileBiography());
+        model.addAttribute("profile", user.getProfile());
+
         return "profile/index";
     }
 }
-
-//
-//    @Autowired
-//    private ProfileRepository profileRepository;
-//
-//    @GetMapping("index")
-//    public String displayEventList(Model model) {
-////    public String displayEventList(HttpSession session, Model model) {
-//
-////        Integer userId = (Integer) session.getAttribute("user");
-////        Optional<User> result = userRepository.findById(userId);
-////        User user = result.get();
-//
-//        model.addAttribute("profile", "Profile");
-////        model.addAttribute("event","List Event");
-////        model.addAttribute("events", eventRepository.findAll());
-////        model.addAttribute("attendedEvents", user.getEvents());
-//
-//        return "profile/index";
-//    }
-//
-//
-//}

@@ -15,44 +15,11 @@
         <!-- Second Half -->
         <div class="split right">
             <div class="centered">
-<!--                <p><h6>username: EDDY</h6></p>-->
-<!--                <p><h6>email: eddy@gmail.com</h6></p>-->
-<!--                <p><h6>city: St. Louis Mo.</h6></p>-->
-<!--                <p><h6>Bio: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</h6></p>-->
-
-<!-- <ul th:each="profile : ${profiles}" class="profile">-->
-                <ul>
-<!--                    <li class="list-group-item">Name</li>-->
-<!--                    &lt;!&ndash;                    <li th:text="${user.username}" class="list-group-item">Name</li>&ndash;&gt;-->
-<!--                    <li class="list-group-item"> I.D.</li>-->
-<!--&lt;!&ndash;                    <li th:text="${profile.profileId}" class="list-group-item"> I.D.</li>&ndash;&gt;-->
-<!--                    <li class="list-group-item">City</li>-->
-                    <li th:text="${profileLocation}">City</li>
-<!--&lt;!&ndash;                    <li th:text="${profile.profileLocation}" class="list-group-item">City</li>&ndash;&gt;-->
-<!--                    <li class="list-group-item">Bio</li>-->
-<!--&lt;!&ndash;                    <li th:text="${profile.profileBiography}" class="list-group-item">Bio</li>&ndash;&gt;-->
-                </ul>
-<!--                <h1>Update profile</h1>-->
-<!--                <table class="table table-striped">-->
-<!--                    <thead>-->
-<!--                    <tr>-->
-<!--&lt;!&ndash;                        <th>Name</th>&ndash;&gt;-->
-<!--                        <th>ProfileId</th>-->
-<!--                        <th>City</th>-->
-<!--                        <th>Bio</th>-->
-<!--                        <th>Other</th>-->
-<!--                    </tr>-->
-<!--                    </thead>-->
-<!--                    <tr th:each="profile : ${profiles}">-->
-<!--&lt;!&ndash;                        <td th:text="${user.username}"></td>&ndash;&gt;-->
-<!--                        <td th:text="${profile.profileId}"></td>-->
-<!--                        <td th:text="${profile.profileLocation}"></td>-->
-<!--                        <td th:text="${profile.profileBiography}"></td>-->
-<!--                        <td>-->
-<!--                            <a th:href="'/profile/update?profileId=' + ${profile.profileId}">Edit</a>-->
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                </table>-->
+<!--                <p th:text="'content: ' + ${greeting.content}" />-->
+<!--                <a href="/update">Submit another message</a>-->
+                <p><h6 th:text="${users_name}"/></p>
+                <p th:text="'id: ' + ${profile.profileId}" />-->
+                <p th:text="'content: ' + ${profile.profileLocation}" />
                 <button onclick="window.location.href='../profile/update';" type="button" class="btn btn-secondary">Update</button>
             </div>
         </div>

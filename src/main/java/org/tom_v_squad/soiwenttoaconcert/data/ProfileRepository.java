@@ -9,7 +9,5 @@ import org.tom_v_squad.soiwenttoaconcert.models.Profile;
 
 @Repository
 public interface ProfileRepository extends CrudRepository<Profile, Integer> {
-//    ProfileController getProfileLocation();
-//    ProfileController getProfileId();
-//    ProfileController getProfileBiography();
+
 }
