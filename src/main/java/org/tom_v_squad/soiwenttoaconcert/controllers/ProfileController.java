@@ -12,6 +12,7 @@ import org.tom_v_squad.soiwenttoaconcert.models.Profile;
 import org.tom_v_squad.soiwenttoaconcert.models.User;
 
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
@@ -26,7 +27,7 @@ public class ProfileController {
 
     @GetMapping("update")
     public String goUpdate(HttpSession session, Model model) {
-        System.out.println("@@@@@@@@@@@@");
+        System.out.println("############### goUpdate()");
         Integer userId = (Integer) session.getAttribute("user");
         Optional<User> result = userRepository.findById(userId);
         User user = result.get();
@@ -40,25 +41,35 @@ public class ProfileController {
 
     }
 
-    @PostMapping(path="/update")
-    public String sendUpdate(@RequestBody Profile profile, Model model) {
-        System.out.println("#########");
+    @PostMapping(path="/update", consumes = "application/x-www-form-urlencoded")
+    public String sendUpdate(@RequestParam Map<String, String> body,
+                             HttpSession session,
+                             Model model) {
+        System.out.println("############### sendUpdate()" + body);
+        Profile profile = new Profile(body.get("profileLocation"), body.get("profileBiography"));
         profileRepository.save(profile);
         model.addAttribute("profile", profile);
-//        model.addAttribute(new Profile());
-        return "profile/update";
-    }
-
-    @GetMapping("index")
-    public String displayUserProfile(HttpSession session, Model model) {
 
         Integer userId = (Integer) session.getAttribute("user");
         Optional<User> result = userRepository.findById(userId);
         User user = result.get();
-        Optional<Profile> profileResult = profileRepository.findById(user.getProfile().getProfileId());
-        if(profileResult==null) {
-            System.out.println("null@@@@@@@@@@@@");
-        } else
+        user.setProfile(profile);
+        userRepository.save(user);
+
+//        model.addAttribute(new Profile());
+        return displayUserProfile(session, model);
+    }
+
+    @GetMapping("index")
+    public String displayUserProfile(HttpSession session, Model model) {
+        System.out.println("############### displayUserProfile()");
+
+        Integer userId = (Integer) session.getAttribute("user");
+        Optional<User> result = userRepository.findById(userId);
+        User user = result.get();
+        if(user.getProfile() == null) {
+            user.setProfile(new Profile());
+        }
         model.addAttribute("users_name", user.getUsername());
         model.addAttribute("profile", user.getProfile());
 

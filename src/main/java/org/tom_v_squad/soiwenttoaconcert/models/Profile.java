@@ -25,6 +25,11 @@ public class Profile {
         this.profileBiography = profileBiography;
     }
 
+    public Profile(String profileLocation, String profileBiography) {
+        this.profileLocation = profileLocation;
+        this.profileBiography = profileBiography;
+    }
+
     public Profile() {
         this.profileId = profileId++;
     }
@@ -53,9 +58,6 @@ public class Profile {
 //        this.profileLocation = profileLocation;
 //    }
 
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,4 +76,3 @@ public class Profile {
 
 
 }
-

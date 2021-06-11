@@ -2,79 +2,76 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head" ></head>
 <body>
-    <header th:replace="fragments :: header"></header>
-    <div class="container">
+<header th:replace="fragments :: header"></header>
+<div class="container">
 
-        <!--     First Half -->
-        <div class="split left">
-            <div class="centered">
-                <h2>Update </h2>
-                <h2>Profile</h2>
-            </div>
-        </div>
-
-        <!-- Second Half -->
-        <div class="split right">
-            <div th:if = "${successAlert}" class="alert alert-success" role="alert">
-                Profile successfully updated!
-            </div>
-            <div th:if = "${failAlert}" class="alert alert-warning" role="alert">
-                Something went wrong, please try again!
-            </div>
-            <div class="centered">
-                <form class="fieldWidth" action="#" th:action="@{/update}" th:object="${profile}" method="post">
-
-<!--                    <form  th:object="${artist}" method="post">-->
-<!--                        <input th:field = "${artist.artistName}" label= "artist" type="text" name="artistName">Artist</label>-->
-
-                    <div class="form-group">
-                        <label for="usersname">NAME</label>
-                        <input type="text" class="form-control"
-                               id="usersname"
-                               th:placeholder="${users_name}"
-                               name="users_name"
-                               th:field="${users_name}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="profile.profileLocation">CITY</label>
-                        <input type="text" class="form-control"
-                               id="profile.profileLocation"
-                               placeholder="Enter your city or location"
-                               name="profile.profileLocation"
-                               th:field="${profile.profileLocation}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="profileBiography">BIO</label>
-                        <input type="text" class="form-control"
-                               id="profileBiography"
-                               placeholder="Tell your public who you are"
-                               name="profile.profileBiography"
-                               th:field="${profile.profileBiography}"
-                        >
-                    </div>
-
-<!--                    <div class="form-group">-->
-<!--                        <label for="profileEmail">EMAIL</label>-->
-<!--                        <input type="email" class="form-control"-->
-<!--                               id="profileEmail"-->
-<!--                               placeholder="Update email"-->
-<!--                               name="profileEmail"-->
-<!--                               th:field="${profileEmail}"-->
-<!--                        >-->
-<!--                    </div>-->
-
-
-                    <br/>
-                    <button onclick="window.location.href='../profile/index';"
-                            type="button"
-                            class="btn btn-secondary">Submit</button>
-                </form>
-            </div>
+    <!--     First Half -->
+    <div class="split left">
+        <div class="centered">
+            <h2>Update </h2>
+            <h2>Profile</h2>
         </div>
     </div>
+
+    <!-- Second Half -->
+    <div class="split right">
+        <div th:if = "${successAlert}" class="alert alert-success" role="alert">
+            Profile successfully updated!
+        </div>
+        <div th:if = "${failAlert}" class="alert alert-warning" role="alert">
+            Something went wrong, please try again!
+        </div>
+        <div class="centered">
+            <form class="fieldWidth" action="#" th:action="@{/profile/update}" th:object="${profile}" method="post">
+
+                <!--                    <form  th:object="${artist}" method="post">-->
+                <!--                        <input th:field = "${artist.artistName}" label= "artist" type="text" name="artistName">Artist</label>-->
+
+                <div class="form-group">
+                    <label for="usersname">NAME</label>
+                    <input type="text" class="form-control"
+                           id="usersname"
+                           th:placeholder="${users_name}"
+                           th:field="${users_name}"
+                           disabled
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="profileLocation">CITY</label>
+                    <input type="text" class="form-control"
+                           id="profileLocation"
+                           placeholder="Enter your city or location"
+                           th:field="*{profileLocation}"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="profileBiography">BIO</label>
+                    <input type="text" class="form-control"
+                           id="profileBiography"
+                           placeholder="Tell your public who you are"
+                           th:field="*{profileBiography}"
+                    >
+                </div>
+
+                <!--                    <div class="form-group">-->
+                <!--                        <label for="profileEmail">EMAIL</label>-->
+                <!--                        <input type="email" class="form-control"-->
+                <!--                               id="profileEmail"-->
+                <!--                               placeholder="Update email"-->
+                <!--                               name="profileEmail"-->
+                <!--                               th:field="${profileEmail}"-->
+                <!--                        >-->
+                <!--                    </div>-->
+
+
+                <br/>
+                <button type="submit"
+                        class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
