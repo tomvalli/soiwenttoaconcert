@@ -5,7 +5,6 @@
 <header th:replace="fragments :: header"></header>
 <div class="container">
 
-    <!--     First Half -->
     <div class="split left">
         <div class="centered">
             <h2>Update </h2>
@@ -13,7 +12,6 @@
         </div>
     </div>
 
-    <!-- Second Half -->
     <div class="split right">
         <div th:if = "${successAlert}" class="alert alert-success" role="alert">
             Profile successfully updated!
@@ -23,9 +21,6 @@
         </div>
         <div class="centered">
             <form class="fieldWidth" action="#" th:action="@{/profile/update}" th:object="${profile}" method="post">
-
-                <!--                    <form  th:object="${artist}" method="post">-->
-                <!--                        <input th:field = "${artist.artistName}" label= "artist" type="text" name="artistName">Artist</label>-->
 
                 <div class="form-group">
                     <label for="usersname">NAME</label>
@@ -54,17 +49,6 @@
                            th:field="*{profileBiography}"
                     >
                 </div>
-
-                <!--                    <div class="form-group">-->
-                <!--                        <label for="profileEmail">EMAIL</label>-->
-                <!--                        <input type="email" class="form-control"-->
-                <!--                               id="profileEmail"-->
-                <!--                               placeholder="Update email"-->
-                <!--                               name="profileEmail"-->
-                <!--                               th:field="${profileEmail}"-->
-                <!--                        >-->
-                <!--                    </div>-->
-
 
                 <br/>
                 <button type="submit"
