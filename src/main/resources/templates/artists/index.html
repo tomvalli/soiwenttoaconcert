@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+<br/><br/><br/><br/>
+<div th:replace="fragments :: page-header"></div>
+
+<p th:unless="${artists} and ${artists.size()}">no concerts!</p>
+
+<div class="container body-content">
+
+    <h2>artists</h2>
+    <ul>
+        <li th:each="artist : ${artists}">
+            <a th:href="@{'/artists/view/' + ${artist.id}}" th:text="${artist.name}"></a>
+        </li>
+    </ul>
+    <a th:href="@{'/artists/add'}">Add artists</a>
+
+</div>
+
+</body>
+</html>
+

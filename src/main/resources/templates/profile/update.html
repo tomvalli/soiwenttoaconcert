@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head" ></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container">
+
+    <div class="split left">
+        <div class="centered">
+            <h2>Update </h2>
+            <h2>Profile</h2>
+        </div>
+    </div>
+
+    <div class="split right">
+        <div th:if = "${successAlert}" class="alert alert-success" role="alert">
+            Profile successfully updated!
+        </div>
+        <div th:if = "${failAlert}" class="alert alert-warning" role="alert">
+            Something went wrong, please try again!
+        </div>
+        <div class="centered">
+            <form class="fieldWidth" action="#" th:action="@{/profile/update}" th:object="${profile}" method="post">
+
+                <div class="form-group">
+                    <label for="usersname">NAME</label>
+                    <input type="text" class="form-control"
+                           id="usersname"
+                           th:placeholder="${users_name}"
+                           th:field="${users_name}"
+                           disabled
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="profileLocation">CITY</label>
+                    <input type="text" class="form-control"
+                           id="profileLocation"
+                           placeholder="Enter your city or location"
+                           th:field="*{profileLocation}"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="profileBiography">BIO</label>
+                    <input type="text" class="form-control"
+                           id="profileBiography"
+                           placeholder="Tell your public who you are"
+                           th:field="*{profileBiography}"
+                    >
+                </div>
+
+                <br/>
+                <button type="submit"
+                        class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

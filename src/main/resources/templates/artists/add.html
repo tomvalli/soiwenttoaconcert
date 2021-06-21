@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container  body-content">
+<br/><br/><br/><br/>
+<h1>update profile</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<form method="post" style="max-width:600px;">
+
+    <div class="form-group">
+        <label th:for="name">User Name</label>
+        <input class="form-control" th:field="${artist.name}" />
+        <span th:errors="${artist.name}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="description">artist Description</label>
+        <input class="form-control" th:field="${artist.description}" />
+        <span th:errors="${artist.description}" class="error"></span>
+    </div>
+
+    <input type="submit" value="update" />
+</form>
+
+</body>
+</html>

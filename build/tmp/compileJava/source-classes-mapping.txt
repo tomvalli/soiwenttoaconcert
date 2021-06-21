@@ -1,44 +1,50 @@
-org/tom_v_squad/soiwenttoaconcert/models/Venue.java
- org.tom_v_squad.soiwenttoaconcert.models.Venue
-org/tom_v_squad/soiwenttoaconcert/data/VenueRepository.java
- org.tom_v_squad.soiwenttoaconcert.data.VenueRepository
 org/tom_v_squad/soiwenttoaconcert/models/DTO/RegisterFormDTO.java
  org.tom_v_squad.soiwenttoaconcert.models.DTO.RegisterFormDTO
-org/tom_v_squad/soiwenttoaconcert/controllers/UserController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.UserController
-org/tom_v_squad/soiwenttoaconcert/controllers/SearchController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.SearchController
+org/tom_v_squad/soiwenttoaconcert/data/VenueRepository.java
+ org.tom_v_squad.soiwenttoaconcert.data.VenueRepository
+org/tom_v_squad/soiwenttoaconcert/data/ProfileRepository.java
+ org.tom_v_squad.soiwenttoaconcert.data.ProfileRepository
 org/tom_v_squad/soiwenttoaconcert/data/ArtistRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.ArtistRepository
-org/tom_v_squad/soiwenttoaconcert/models/Artist.java
- org.tom_v_squad.soiwenttoaconcert.models.Artist
 org/tom_v_squad/soiwenttoaconcert/SoiwenttoaconcertApplication.java
  org.tom_v_squad.soiwenttoaconcert.SoiwenttoaconcertApplication
-org/tom_v_squad/soiwenttoaconcert/controllers/ListController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.ListController
+org/tom_v_squad/soiwenttoaconcert/controllers/ArtistController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.ArtistController
 org/tom_v_squad/soiwenttoaconcert/controllers/VenueController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.VenueController
+org/tom_v_squad/soiwenttoaconcert/models/Venue.java
+ org.tom_v_squad.soiwenttoaconcert.models.Venue
+org/tom_v_squad/soiwenttoaconcert/models/Artist.java
+ org.tom_v_squad.soiwenttoaconcert.models.Artist
 org/tom_v_squad/soiwenttoaconcert/data/EventRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.EventRepository
+org/tom_v_squad/soiwenttoaconcert/models/Event.java
+ org.tom_v_squad.soiwenttoaconcert.models.Event
+org/tom_v_squad/soiwenttoaconcert/controllers/SearchController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.SearchController
+org/tom_v_squad/soiwenttoaconcert/controllers/ListController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.ListController
+org/tom_v_squad/soiwenttoaconcert/models/EventData.java
+ org.tom_v_squad.soiwenttoaconcert.models.EventData
 org/tom_v_squad/soiwenttoaconcert/models/DTO/LoginFormDTO.java
  org.tom_v_squad.soiwenttoaconcert.models.DTO.LoginFormDTO
 org/tom_v_squad/soiwenttoaconcert/controllers/AuthenticationController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.AuthenticationController
 org/tom_v_squad/soiwenttoaconcert/models/User.java
  org.tom_v_squad.soiwenttoaconcert.models.User
-org/tom_v_squad/soiwenttoaconcert/models/EventData.java
- org.tom_v_squad.soiwenttoaconcert.models.EventData
+org/tom_v_squad/soiwenttoaconcert/models/Profile.java
+ org.tom_v_squad.soiwenttoaconcert.models.Profile
 org/tom_v_squad/soiwenttoaconcert/WebApplicationConfig.java
  org.tom_v_squad.soiwenttoaconcert.WebApplicationConfig
 org/tom_v_squad/soiwenttoaconcert/data/UserRepository.java
  org.tom_v_squad.soiwenttoaconcert.data.UserRepository
-org/tom_v_squad/soiwenttoaconcert/models/Event.java
- org.tom_v_squad.soiwenttoaconcert.models.Event
 org/tom_v_squad/soiwenttoaconcert/models/DTO/UserEventDTO.java
  org.tom_v_squad.soiwenttoaconcert.models.DTO.UserEventDTO
 org/tom_v_squad/soiwenttoaconcert/controllers/EventController.java
  org.tom_v_squad.soiwenttoaconcert.controllers.EventController
 org/tom_v_squad/soiwenttoaconcert/AuthenticationFilter.java
  org.tom_v_squad.soiwenttoaconcert.AuthenticationFilter
-org/tom_v_squad/soiwenttoaconcert/controllers/ArtistController.java
- org.tom_v_squad.soiwenttoaconcert.controllers.ArtistController
+org/tom_v_squad/soiwenttoaconcert/controllers/UserController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.UserController
+org/tom_v_squad/soiwenttoaconcert/controllers/ProfileController.java
+ org.tom_v_squad.soiwenttoaconcert.controllers.ProfileController
